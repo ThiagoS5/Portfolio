@@ -20,7 +20,7 @@ Siga os passos abaixo para rodar o ambiente de desenvolvimento local:
 1. Clone o repositorio:
 
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO]
+git clone https://github.com/ThiagoS5/Portfolio.git
 ```
 
 2. Instale as dependencias:
@@ -69,7 +69,7 @@ A pasta `dist/` sera gerada com os arquivos prontos para deploy.
 
 ## Autor
 
-- **Thiago** - Desenvolvedor Front-end - [GitHub](https://github.com/) / [LinkedIn](https://www.linkedin.com/)
+- **Thiago** - Desenvolvedor Front-end - [GitHub](https://github.com/ThiagoS5) / [LinkedIn](https://www.linkedin.com/)
 
 Meu objetivo e me aprimorar constantemente, com foco em cyberseguranca, acessibilidade e arquitetura SOLID.
 
