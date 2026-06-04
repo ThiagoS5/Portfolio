@@ -1,75 +1,83 @@
-# React + TypeScript + Vite
+# Portfolio Minimalista - Thiago
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio front-end minimalista desenvolvido para apresentar projetos, experiencia e formas de contato em uma interface limpa, responsiva e acessivel. O projeto prioriza UI/UX objetiva, navegacao sem ruido, tema charcoal com microinteracoes suaves e uma arquitetura modular baseada em componentes, rotas reais e boas praticas de manutencao.
 
-Currently, two official plugins are available:
+## Comecando
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Estas instrucoes permitem obter uma copia do projeto em operacao na maquina local para exploracao do codigo e testes.
 
-## React Compiler
+### Pre-requisitos
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Certifique-se de ter as seguintes ferramentas instaladas:
 
-Note: This will impact Vite dev & build performances.
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/pt/)
 
-## Expanding the ESLint configuration
+### Instalacao e Execucao
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Siga os passos abaixo para rodar o ambiente de desenvolvimento local:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Clone o repositorio:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone [URL_DO_SEU_REPOSITORIO]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
+
+3. Inicie o servidor de desenvolvimento:
+
+```bash
+pnpm run dev
+```
+
+4. Abra o navegador e acesse `http://localhost:5173`.
+
+## Qualidade de Codigo
+
+Este projeto utiliza o [Biome](https://biomejs.dev/) para manter consistencia, formatacao e verificacao de boas praticas no codigo.
+
+```bash
+pnpm exec biome check src
+```
+
+## Implantacao
+
+Para gerar os arquivos estaticos de producao:
+
+```bash
+pnpm run build
+```
+
+A pasta `dist/` sera gerada com os arquivos prontos para deploy.
+
+## Construido com
+
+- [React](https://react.dev/) - Biblioteca para construcao da interface.
+- [Vite](https://vite.dev/) - Ferramenta de build e servidor de desenvolvimento.
+- [TypeScript](https://www.typescriptlang.org/) - Tipagem estatica para maior previsibilidade.
+- [Tailwind CSS](https://tailwindcss.com/) - Sistema utilitario para composicao visual responsiva.
+- [Framer Motion](https://www.framer.com/motion/) - Transicoes de rota e microinteracoes.
+- [React Router](https://reactrouter.com/) - Roteamento entre paginas reais.
+- [Radix UI](https://www.radix-ui.com/) - Primitivos acessiveis para componentes de UI.
+- [shadcn/ui](https://ui.shadcn.com/) - Base de componentes e tokens visuais.
+- [Lucide React](https://lucide.dev/) - Iconografia consistente e leve.
+
+## Autor
+
+- **Thiago** - Desenvolvedor Front-end - [GitHub](https://github.com/) / [LinkedIn](https://www.linkedin.com/)
+
+Meu objetivo e me aprimorar constantemente, com foco em cyberseguranca, acessibilidade e arquitetura SOLID.
+
+## Licenca
+
+Este projeto esta sob a licenca MIT.
+
+## Agradecimentos
+
+- Obrigado por visitar meu portfolio. Fique a vontade para explorar o codigo.
+- Se gostou do que viu, me chame para um cafe ou para uma vaga.
