@@ -1,5 +1,3 @@
-import minimalPortfolioPreview from "../../exemplo.png";
-
 export const coreTechnologies = [
 	"React",
 	"TypeScript",
@@ -23,9 +21,6 @@ export const projects = [
 		description:
 			"Interface pessoal em preto e branco com navegação esférica, tema claro/escuro e seções otimizadas para leitura.",
 		technologies: ["React", "Tailwind CSS", "Shadcn UI"],
-		previewImage: minimalPortfolioPreview,
-		previewAlt:
-			"Captura de tela do portfólio minimalista com fundo preto e navegação circular.",
 		codeUrl: "https://github.com/",
 		demoUrl: "/sobre-mim",
 	},
