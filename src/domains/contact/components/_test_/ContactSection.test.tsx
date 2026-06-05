@@ -15,7 +15,11 @@ describe("ContactSection", () => {
 		).toBeInTheDocument();
 		expect(screen.getByRole("link", { name: /Email:/i })).toHaveAttribute(
 			"href",
-			expect.stringContaining("mailto:"),
+			"mailto:thimarqueti@gmail.com",
+		);
+		expect(screen.getByRole("link", { name: /LinkedIn:/i })).toHaveAttribute(
+			"href",
+			"https://www.linkedin.com/in/thiago-marqueti-soares/",
 		);
 		expect(screen.getByLabelText("Nome")).toBeInTheDocument();
 	});

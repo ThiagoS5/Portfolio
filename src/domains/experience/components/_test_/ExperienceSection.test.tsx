@@ -10,9 +10,10 @@ describe("ExperienceSection", () => {
 		expect(
 			screen.getByRole("heading", {
 				level: 1,
-				name: /aplicada em produtos digitais/i,
+				name: /front-end corporativo/i,
 			}),
 		).toBeInTheDocument();
 		expect(screen.getAllByRole("article").length).toBeGreaterThan(0);
+		expect(screen.getByText("RD Saúde")).toBeInTheDocument();
 	});
 });

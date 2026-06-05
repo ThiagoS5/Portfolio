@@ -1,0 +1,194 @@
+{
+	"about": {
+		"asideLabel": "Additional information",
+		"certifications": [
+			{
+				"description": "Training in interface design, prototyping, and user experience with a focus on connecting design and development workflows.",
+				"title": "UX/UI with Figma",
+				"year": "Rocketseat, 2025"
+			},
+			{
+				"description": "Training on request optimization, cache strategies, and performance improvements for modern web applications.",
+				"title": "HTTP and Performance",
+				"year": "Rocketseat, 2025"
+			},
+			{
+				"description": "Implementation of digital accessibility practices (WAI-ARIA) in React components to improve inclusion and usability.",
+				"title": "Accessibility with React",
+				"year": "Rocketseat, 2024"
+			},
+			{
+				"description": "Full Stack program covering Front-End, Back-End, and databases, creating the foundation for later Front-End specialization.",
+				"title": "RD Quero Ser Dev Program",
+				"year": "Resilia Educação, 2023"
+			}
+		],
+		"certificationsTitle": "Courses and certifications",
+		"education": {
+			"degree": "Bachelor's Degree in Information Systems",
+			"institution": "Impacta Tecnologia, São Paulo",
+			"period": "Completed in 2025"
+		},
+		"educationTitle": "Education",
+		"intro": "Mid-level Front-End Developer specialized in scalable interfaces, performance, testing, and accessibility.",
+		"paragraphs": [
+			"Mid-level Front-End Developer with over 4 years of consolidated experience at RD Saúde, specialized in the React, Next.js, and TypeScript ecosystem.",
+			"I work on scalable interface architecture and Design Systems, with a proven record of reducing development time by 30% through reusable components and module standardization.",
+			"I bring a strong software quality mindset, increasing automated test coverage to 100% with Jest and React Testing Library while improving performance with Vite, Webpack, Redux, and code splitting strategies.",
+			"I work with advanced technical English (C1), WAI-ARIA digital accessibility, and close collaboration with UX/UI and product teams to deliver consistent and inclusive experiences."
+		],
+		"skills": [
+			"JavaScript",
+			"TypeScript",
+			"PHP",
+			"React",
+			"Next.js",
+			"Angular",
+			"Redux",
+			"Context API",
+			"Zustand",
+			"Vite",
+			"Webpack",
+			"Code Splitting",
+			"Jest",
+			"React Testing Library",
+			"Tailwind CSS",
+			"Styled Components",
+			"Design Systems",
+			"Figma",
+			"RESTful APIs",
+			"HTTP",
+			"Cache",
+			"WAI-ARIA",
+			"Digital Accessibility"
+		],
+		"skillsAria": "Core skills",
+		"skillsTitle": "Skills",
+		"title": "About Me"
+	},
+	"contact": {
+		"externalSuffix": " (opens in a new tab)",
+		"form": {
+			"button": "Send message",
+			"email": "thimarqueti@gmail.com",
+			"errors": {
+				"email": "Enter a valid email.",
+				"message": "Describe the message with at least 10 characters.",
+				"name": "Enter your name."
+			},
+			"help": "All fields are required. When submitted, your email client will open with the message filled in.",
+			"labels": {
+				"email": "Email",
+				"message": "Message",
+				"name": "Name"
+			},
+			"mailtoBody": "{{message}}\n\nReply to: {{email}}",
+			"mailtoSubject": "Portfolio contact - {{name}}",
+			"placeholders": {
+				"email": "you@email.com",
+				"message": "Briefly describe the project",
+				"name": "Your name"
+			},
+			"status": "Opening your email client to finish sending.",
+			"title": "Contact form"
+		},
+		"linkAria": "{{label}}: {{value}}{{external}}",
+		"links": [
+			{
+				"href": "mailto:thimarqueti@gmail.com",
+				"label": "Email",
+				"value": "thimarqueti@gmail.com"
+			},
+			{
+				"href": "tel:+5516996517844",
+				"label": "Phone",
+				"value": "+55 (16) 99651-7844"
+			},
+			{
+				"href": "https://www.linkedin.com/in/thiago-marqueti-soares/",
+				"label": "LinkedIn",
+				"value": "linkedin.com/in/thiago-marqueti-soares"
+			}
+		],
+		"section": {
+			"description": "Send a message with context, timeline, and goal. The reply will include objective next steps.",
+			"eyebrow": "Contact",
+			"title": "Let's turn an idea into an interface."
+		}
+	},
+	"controls": {
+		"language": {
+			"label": "Current language: {{current}}. Switch to {{next}}.",
+			"names": {
+				"en": "English",
+				"pt-BR": "Portuguese"
+			},
+			"status": "Language changed to {{language}}."
+		},
+		"theme": {
+			"dark": "Activate dark theme",
+			"light": "Activate light theme"
+		}
+	},
+	"experience": {
+		"achievementLabel": "Key achievements for {{role}}",
+		"achievementTitle": "Key achievements",
+		"items": [
+			{
+				"company": "RD Saúde",
+				"description": "I worked with a focus on performance, accessibility, and user experience, collaborating with UX/UI and product teams to deliver scalable solutions with React, Next.js, JavaScript/TypeScript, and engineering best practices.",
+				"highlights": [
+					"Restructured front-end components and helped create a reusable React library, reducing new screen development time by up to 30%.",
+					"Increased automated test coverage from 50% to 100% with Jest and React Testing Library, improving release reliability.",
+					"Implemented WAI-ARIA accessibility patterns and usability practices to improve the navigation experience.",
+					"Optimized Front-End/Back-End communication with RESTful patterns, reducing real-time data loading latency.",
+					"Managed global state with Redux and Context API, reducing production data-flow bugs by 20%.",
+					"Configured Vite and Webpack with code splitting, reducing the final bundle size by 15% and improving initial loading."
+				],
+				"period": "11/2020 - 04/2025",
+				"role": "Front-End Developer",
+				"technologies": [
+					"React",
+					"Next.js",
+					"TypeScript",
+					"Redux",
+					"Context API",
+					"Vite",
+					"Webpack",
+					"Jest",
+					"React Testing Library",
+					"WAI-ARIA"
+				]
+			}
+		],
+		"section": {
+			"description": "A track record shaped by performance, accessibility, automated testing, Design Systems, and product collaboration.",
+			"eyebrow": "Experience",
+			"title": "Real-world experience in corporate front-end."
+		},
+		"technologiesLabel": "Technologies related to {{role}}"
+	},
+	"layout": {
+		"footerName": "Thiago Soares",
+		"homeTitle": "Portfolio navigation hub",
+		"skipLink": "Skip to main content"
+	},
+	"navigation": {
+		"ariaLabel": "Primary navigation",
+		"help": "Navigation for the About me, Projects, Experience, Contact, and FAQ pages.",
+		"items": {
+			"about": "About me",
+			"contact": "Contact",
+			"experience": "Experience",
+			"faq": "FAQ",
+			"projects": "Projects"
+		},
+		"menu": {
+			"collapseActive": "Collapse navigation menu for {{label}}",
+			"expandActive": "Expand navigation menu for {{label}}",
+			"mobileClose": "Close navigation menu",
+			"mobileOpen": "Open navigation menu",
+			"pagesLabel": "Portfolio pages"
+		}
+	}
+}

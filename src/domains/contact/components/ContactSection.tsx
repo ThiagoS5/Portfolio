@@ -1,9 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { ContactForm } from "@/domains/contact/components/ContactForm";
 import { SectionHeading } from "@/shared/components/molecules/SectionHeading";
-import { contactLinks } from "@/shared/data/portfolio";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 
 export function ContactSection() {
+	const { t } = useTranslation();
+	const { contact } = usePortfolioContent();
+
 	return (
 		<section
 			aria-labelledby="contato-title"
@@ -13,22 +17,24 @@ export function ContactSection() {
 			<div className="grid gap-16 md:grid-cols-[0.8fr_1fr] md:items-start">
 				<div className="space-y-10">
 					<SectionHeading
-						description="Envie uma mensagem com contexto, prazo e objetivo. A resposta vem com próximos passos objetivos."
-						eyebrow="Contatos"
+						description={contact.section.description}
+						eyebrow={contact.section.eyebrow}
 						id="contato-title"
 						level={1}
-						title="Vamos transformar uma ideia em interface."
+						title={contact.section.title}
 					/>
 
 					<address className="space-y-5 not-italic">
-						{contactLinks.map((link) => {
+						{contact.links.map((link) => {
 							const isExternal = link.href.startsWith("http");
 
 							return (
 								<a
-									aria-label={`${link.label}: ${link.value}${
-										isExternal ? " (abre em nova aba)" : ""
-									}`}
+									aria-label={t("contact.linkAria", {
+										external: isExternal ? contact.externalSuffix : "",
+										label: link.label,
+										value: link.value,
+									})}
 									className="group flex items-center justify-between gap-4 border-border border-b py-4 text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 									href={link.href}
 									key={link.label}

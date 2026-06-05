@@ -14,17 +14,17 @@ describe("ContactForm", () => {
 			screen.getByRole("button", { name: /Enviar mensagem/i }),
 		).toBeInTheDocument();
 		expect(
-			screen.getByRole("form", { name: /Formulario de contato/i }),
+			screen.getByRole("form", { name: /Formulário de contato/i }),
 		).toBeInTheDocument();
 	});
 
 	it("announces validation errors and marks invalid fields", async () => {
 		render(<ContactForm />);
 
-		fireEvent.submit(screen.getByRole("form", { name: /Formulario/i }));
+		fireEvent.submit(screen.getByRole("form", { name: /Formulário/i }));
 
 		expect(await screen.findByText("Informe seu nome.")).toBeInTheDocument();
-		expect(screen.getByText("Informe um email valido.")).toBeInTheDocument();
+		expect(screen.getByText("Informe um email válido.")).toBeInTheDocument();
 		expect(
 			screen.getByText("Descreva a mensagem com pelo menos 10 caracteres."),
 		).toBeInTheDocument();
@@ -58,7 +58,7 @@ describe("ContactForm", () => {
 		fireEvent.change(screen.getByLabelText("Mensagem"), {
 			target: { value: "Vamos conversar sobre um projeto" },
 		});
-		fireEvent.submit(screen.getByRole("form", { name: /Formulario/i }));
+		fireEvent.submit(screen.getByRole("form", { name: /Formulário/i }));
 
 		expect(
 			await screen.findByText(

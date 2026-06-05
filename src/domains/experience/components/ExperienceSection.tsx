@@ -1,8 +1,10 @@
 import { ExperienceCard } from "@/domains/experience/components/ExperienceCard";
 import { SectionHeading } from "@/shared/components/molecules/SectionHeading";
-import { experiences } from "@/shared/data/portfolio";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 
 export function ExperienceSection() {
+	const { experience } = usePortfolioContent();
+
 	return (
 		<section
 			aria-labelledby="experiencia-title"
@@ -10,16 +12,27 @@ export function ExperienceSection() {
 			id="experiencia"
 		>
 			<SectionHeading
-				description="Uma trajetória orientada por sistemas, documentação, acessibilidade e implementação cuidadosa."
-				eyebrow="Experiência"
+				description={experience.section.description}
+				eyebrow={experience.section.eyebrow}
 				id="experiencia-title"
 				level={1}
-				title="Experiência aplicada em produtos digitais."
+				title={experience.section.title}
 			/>
 			<ol className="space-y-12">
-				{experiences.map((experience) => (
-					<li key={experience.role}>
-						<ExperienceCard {...experience} />
+				{experience.items.map((item) => (
+					<li key={`${item.company}-${item.role}`}>
+						<ExperienceCard
+							{...item}
+							highlightsLabel={experience.achievementLabel.replace(
+								"{{role}}",
+								item.role,
+							)}
+							highlightsTitle={experience.achievementTitle}
+							technologiesLabel={experience.technologiesLabel.replace(
+								"{{role}}",
+								item.role,
+							)}
+						/>
 					</li>
 				))}
 			</ol>

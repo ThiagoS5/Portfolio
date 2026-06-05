@@ -1,14 +1,16 @@
 import type * as React from "react";
 import { useEffect } from "react";
-
-import { ThemeToggle } from "@/shared/components/atoms/ThemeToggle";
+import { PreferenceControls } from "@/shared/components/molecules/PreferenceControls";
 import { NavigationBar } from "@/shared/components/organisms/NavigationBar";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 
 type PageLayoutProps = {
 	children: React.ReactNode;
 };
 
 export function PageLayout({ children }: PageLayoutProps) {
+	const { layout } = usePortfolioContent();
+
 	useEffect(() => {
 		window.scrollTo({ top: 0 });
 	}, []);
@@ -19,11 +21,11 @@ export function PageLayout({ children }: PageLayoutProps) {
 				className="sr-only z-[60] rounded-full bg-foreground px-4 py-2 text-background focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 				href="#main-content"
 			>
-				Pular para o conteúdo principal
+				{layout.skipLink}
 			</a>
 
 			<div className="fixed top-6 right-6 z-50">
-				<ThemeToggle />
+				<PreferenceControls />
 			</div>
 
 			<header className="mx-auto w-full max-w-6xl pt-12 pb-14 md:pt-16 md:pb-20">
@@ -39,7 +41,7 @@ export function PageLayout({ children }: PageLayoutProps) {
 			</main>
 
 			<footer className="mx-auto flex w-full max-w-6xl flex-col gap-4 border-border border-t px-6 py-10 text-muted-foreground text-sm md:flex-row md:items-center md:justify-between">
-				<p>Thiago Soares</p>
+				<p>{layout.footerName}</p>
 			</footer>
 		</div>
 	);

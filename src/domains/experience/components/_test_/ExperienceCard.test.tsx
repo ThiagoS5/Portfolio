@@ -8,6 +8,9 @@ describe("ExperienceCard", () => {
 		const experience = {
 			company: "Produto Digital",
 			description: "Criacao de interfaces acessiveis.",
+			highlights: ["Aumentou a cobertura de testes."],
+			highlightsLabel: "Principais entregas",
+			highlightsTitle: "Entregas",
 			period: "2024",
 			role: "Front-end Developer",
 			technologies: ["React", "TypeScript"],
@@ -25,6 +28,9 @@ describe("ExperienceCard", () => {
 			within(article).getByRole("list", {
 				name: "Tecnologias relacionadas a Front-end Developer",
 			}),
+		).toBeInTheDocument();
+		expect(
+			within(article).getByRole("list", { name: "Principais entregas" }),
 		).toBeInTheDocument();
 		expect(within(article).getByText("React")).toBeInTheDocument();
 	});

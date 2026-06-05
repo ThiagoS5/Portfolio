@@ -16,43 +16,16 @@ import {
 	X,
 } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router";
-
 import { NavItem } from "@/shared/components/molecules/NavItem";
 import { Button } from "@/shared/components/ui/button";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 import { cn } from "@/shared/lib/utils";
 
-const navItems = [
-	{
-		icon: <UserRound aria-hidden="true" className="size-5" />,
-		label: "Sobre mim",
-		to: "/sobre-mim",
-	},
-	{
-		icon: <Code2 aria-hidden="true" className="size-5" />,
-		label: "Projetos",
-		to: "/projetos",
-	},
-	{
-		icon: <BriefcaseBusiness aria-hidden="true" className="size-5" />,
-		label: "Experiencia",
-		to: "/experiencia",
-	},
-	{
-		icon: <Mail aria-hidden="true" className="size-5" />,
-		label: "Contatos",
-		to: "/contatos",
-	},
-	{
-		icon: <CircleHelp aria-hidden="true" className="size-5" />,
-		label: "FAQ",
-		to: "/faq",
-	},
-];
-
-const homePrimaryItem = navItems[4];
-
 export function NavigationBar() {
+	const { t } = useTranslation();
+	const { navigation } = usePortfolioContent();
 	const { pathname } = useLocation();
 	const [isExpanded, setIsExpanded] = useState(false);
 	const desktopMenuId = useId();
@@ -60,6 +33,34 @@ export function NavigationBar() {
 	const shouldReduceMotion = useReducedMotion();
 	const isHome = pathname === "/";
 	const previousPathnameRef = useRef(pathname);
+	const navItems = [
+		{
+			icon: <UserRound aria-hidden="true" className="size-5" />,
+			label: navigation.items.about,
+			to: "/sobre-mim",
+		},
+		{
+			icon: <Code2 aria-hidden="true" className="size-5" />,
+			label: navigation.items.projects,
+			to: "/projetos",
+		},
+		{
+			icon: <BriefcaseBusiness aria-hidden="true" className="size-5" />,
+			label: navigation.items.experience,
+			to: "/experiencia",
+		},
+		{
+			icon: <Mail aria-hidden="true" className="size-5" />,
+			label: navigation.items.contact,
+			to: "/contatos",
+		},
+		{
+			icon: <CircleHelp aria-hidden="true" className="size-5" />,
+			label: navigation.items.faq,
+			to: "/faq",
+		},
+	];
+	const homePrimaryItem = navItems[4];
 	const activeItem =
 		navItems.find((item) => item.to === pathname) ?? homePrimaryItem;
 	const inactiveItems = navItems.filter((item) => item.to !== activeItem.to);
@@ -132,12 +133,11 @@ export function NavigationBar() {
 	return (
 		<nav
 			aria-describedby="navigation-help"
-			aria-label="Navegacao principal"
+			aria-label={navigation.ariaLabel}
 			className="relative w-full"
 		>
 			<p className="sr-only" id="navigation-help">
-				Navegacao para as paginas Sobre mim, Projetos, Experiencia, Contatos e
-				FAQ.
+				{navigation.help}
 			</p>
 
 			{isHome ? null : (
@@ -147,8 +147,8 @@ export function NavigationBar() {
 						aria-expanded={isExpanded}
 						aria-label={
 							isExpanded
-								? "Fechar menu de navegacao"
-								: "Abrir menu de navegacao"
+								? navigation.menu.mobileClose
+								: navigation.menu.mobileOpen
 						}
 						className="size-12 rounded-full border-border bg-card text-foreground/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_0_1px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out hover:border-foreground/35 hover:bg-card hover:text-foreground focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 						onClick={() => setIsExpanded((current) => !current)}
@@ -167,7 +167,7 @@ export function NavigationBar() {
 						{isExpanded ? (
 							<motion.ul
 								animate="show"
-								aria-label="Paginas do portfolio"
+								aria-label={navigation.menu.pagesLabel}
 								className="absolute top-full left-1/2 z-50 mt-4 flex w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 flex-col items-center gap-4 rounded-2xl border border-border bg-background p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_18px_50px_rgba(0,0,0,0.32)]"
 								exit="exit"
 								id={mobileMenuId}
@@ -214,7 +214,7 @@ export function NavigationBar() {
 				</div>
 			) : (
 				<motion.ul
-					aria-label="Paginas do portfolio"
+					aria-label={navigation.menu.pagesLabel}
 					className="mx-auto hidden w-fit flex-row items-start justify-start gap-8 md:flex"
 					id={desktopMenuId}
 					layout={!shouldReduceMotion}
@@ -224,11 +224,12 @@ export function NavigationBar() {
 							aria-controls={desktopMenuId}
 							aria-current="page"
 							aria-expanded={isExpanded}
-							aria-label={
+							aria-label={t(
 								isExpanded
-									? `Recolher menu de navegacao de ${activeItem.label}`
-									: `Expandir menu de navegacao de ${activeItem.label}`
-							}
+									? "navigation.menu.collapseActive"
+									: "navigation.menu.expandActive",
+								{ label: activeItem.label },
+							)}
 							className="group flex w-full flex-col items-center gap-4 bg-transparent p-0 text-foreground outline-none transition-all duration-300 ease-out focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 							onClick={() => setIsExpanded((current) => !current)}
 							transition={triggerTransition}

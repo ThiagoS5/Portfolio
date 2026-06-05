@@ -1,25 +1,37 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { z } from "zod/v4";
-
 import { FormField } from "@/shared/components/molecules/FormField";
 import { Button } from "@/shared/components/ui/button";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 
-const contactSchema = z.object({
-	email: z.string().trim().email("Informe um email valido."),
-	message: z
-		.string()
-		.trim()
-		.min(10, "Descreva a mensagem com pelo menos 10 caracteres."),
-	name: z.string().trim().min(2, "Informe seu nome."),
-});
+type ContactFormMessages = {
+	email: string;
+	message: string;
+	name: string;
+};
 
-type ContactFormData = z.infer<typeof contactSchema>;
+function createContactSchema(messages: ContactFormMessages) {
+	return z.object({
+		email: z.string().trim().email(messages.email),
+		message: z.string().trim().min(10, messages.message),
+		name: z.string().trim().min(2, messages.name),
+	});
+}
+
+type ContactFormData = z.infer<ReturnType<typeof createContactSchema>>;
 
 export function ContactForm() {
+	const { t } = useTranslation();
+	const { contact } = usePortfolioContent();
 	const [status, setStatus] = useState("");
+	const contactSchema = useMemo(
+		() => createContactSchema(contact.form.errors),
+		[contact.form.errors],
+	);
 	const {
 		formState: { errors },
 		handleSubmit,
@@ -34,11 +46,15 @@ export function ContactForm() {
 	});
 
 	function handleValidSubmit({ email, message, name }: ContactFormData) {
-		const subject = encodeURIComponent(`Contato pelo portfolio - ${name}`);
-		const body = encodeURIComponent(`${message}\n\nResposta para: ${email}`);
+		const subject = encodeURIComponent(
+			t("contact.form.mailtoSubject", { name }),
+		);
+		const body = encodeURIComponent(
+			t("contact.form.mailtoBody", { email, message }),
+		);
 
-		window.location.href = `mailto:thiago.dev@email.com?subject=${subject}&body=${body}`;
-		setStatus("Abrindo seu cliente de email para finalizar o envio.");
+		window.location.href = `mailto:${contact.form.email}?subject=${subject}&body=${body}`;
+		setStatus(contact.form.status);
 	}
 
 	return (
@@ -50,19 +66,18 @@ export function ContactForm() {
 			onSubmit={handleSubmit(handleValidSubmit, () => setStatus(""))}
 		>
 			<h2 className="sr-only" id="contact-form-title">
-				Formulario de contato
+				{contact.form.title}
 			</h2>
 			<p className="sr-only" id="contact-form-help">
-				Todos os campos sao obrigatorios. Ao enviar, seu cliente de email sera
-				aberto com a mensagem preenchida.
+				{contact.form.help}
 			</p>
 			<FormField
 				autoComplete="name"
 				error={errors.name?.message}
 				id="name"
-				label="Nome"
+				label={contact.form.labels.name}
 				name="name"
-				placeholder="Seu nome"
+				placeholder={contact.form.placeholders.name}
 				registration={register("name")}
 				required
 			/>
@@ -70,9 +85,9 @@ export function ContactForm() {
 				autoComplete="email"
 				error={errors.email?.message}
 				id="email"
-				label="Email"
+				label={contact.form.labels.email}
 				name="email"
-				placeholder="voce@email.com"
+				placeholder={contact.form.placeholders.email}
 				registration={register("email")}
 				required
 				type="email"
@@ -80,9 +95,9 @@ export function ContactForm() {
 			<FormField
 				error={errors.message?.message}
 				id="message"
-				label="Mensagem"
+				label={contact.form.labels.message}
 				name="message"
-				placeholder="Conte brevemente sobre o projeto"
+				placeholder={contact.form.placeholders.message}
 				registration={register("message")}
 				required
 				variant="textarea"
@@ -90,7 +105,7 @@ export function ContactForm() {
 			<div className="flex flex-col items-start gap-4">
 				<Button className="rounded-full px-6" type="submit">
 					<Send aria-hidden="true" className="size-4" />
-					Enviar mensagem
+					{contact.form.button}
 				</Button>
 				<p
 					aria-atomic="true"

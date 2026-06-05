@@ -1,21 +1,28 @@
 import { useId } from "react";
-
 import { Pill } from "@/shared/components/atoms/Pill";
 
 type ExperienceCardProps = {
 	company: string;
 	description: string;
+	highlights?: string[];
+	highlightsLabel?: string;
+	highlightsTitle?: string;
 	period: string;
 	role: string;
 	technologies: string[];
+	technologiesLabel?: string;
 };
 
 export function ExperienceCard({
 	company,
 	description,
+	highlights = [],
+	highlightsLabel,
+	highlightsTitle,
 	period,
 	role,
 	technologies,
+	technologiesLabel = `Tecnologias relacionadas a ${role}`,
 }: ExperienceCardProps) {
 	const titleId = useId();
 
@@ -35,10 +42,22 @@ export function ExperienceCard({
 				<p className="max-w-2xl text-muted-foreground leading-8">
 					{description}
 				</p>
-				<ul
-					aria-label={`Tecnologias relacionadas a ${role}`}
-					className="flex flex-wrap gap-2"
-				>
+				{highlights.length > 0 ? (
+					<div className="space-y-3">
+						{highlightsTitle ? (
+							<h3 className="font-semibold text-sm">{highlightsTitle}</h3>
+						) : null}
+						<ul
+							aria-label={highlightsLabel}
+							className="list-disc space-y-3 pl-5 text-muted-foreground leading-7"
+						>
+							{highlights.map((highlight) => (
+								<li key={highlight}>{highlight}</li>
+							))}
+						</ul>
+					</div>
+				) : null}
+				<ul aria-label={technologiesLabel} className="flex flex-wrap gap-2">
 					{technologies.map((technology) => (
 						<li key={technology}>
 							<Pill variant="outline">{technology}</Pill>

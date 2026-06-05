@@ -12,7 +12,11 @@ describe("AboutSection", () => {
 		).toBeInTheDocument();
 		expect(screen.getByLabelText(/Informa/i)).toBeInTheDocument();
 		expect(
-			screen.getByRole("list", { name: "Tecnologias principais" }),
+			screen.getByRole("list", { name: "Habilidades principais" }),
+		).toBeInTheDocument();
+		expect(screen.getByText(/RD Saúde/)).toBeInTheDocument();
+		expect(
+			screen.getByText("Bacharelado em Sistema de Informação"),
 		).toBeInTheDocument();
 	});
 });

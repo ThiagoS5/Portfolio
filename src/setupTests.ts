@@ -1,8 +1,12 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
-import { afterEach } from "vitest";
+import { afterEach, beforeEach } from "vitest";
+import i18n, {
+	DEFAULT_LANGUAGE,
+	LANGUAGE_STORAGE_KEY,
+} from "@/shared/i18n/i18n";
 
-if (typeof window !== "undefined" && !window.localStorage) {
+if (typeof window !== "undefined") {
 	const storage = new Map<string, string>();
 
 	Object.defineProperty(window, "localStorage", {
@@ -15,6 +19,16 @@ if (typeof window !== "undefined" && !window.localStorage) {
 		},
 	});
 }
+
+beforeEach(() => {
+	if (typeof window === "undefined") {
+		return;
+	}
+
+	window.localStorage.removeItem(LANGUAGE_STORAGE_KEY);
+	void i18n.changeLanguage(DEFAULT_LANGUAGE);
+	document.documentElement.lang = DEFAULT_LANGUAGE;
+});
 
 afterEach(() => {
 	cleanup();
