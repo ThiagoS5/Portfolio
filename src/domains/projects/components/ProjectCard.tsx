@@ -1,7 +1,6 @@
 import { Code2, ExternalLink } from "lucide-react";
 import { useId } from "react";
 import { Link } from "react-router";
-
 import { Pill } from "@/shared/components/atoms/Pill";
 import { Button } from "@/shared/components/ui/button";
 
