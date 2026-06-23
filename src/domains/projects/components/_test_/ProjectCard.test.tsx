@@ -96,6 +96,30 @@ describe("ProjectCard", () => {
 		expect(demoLink).toHaveAttribute("rel", "noopener noreferrer");
 	});
 
+	it("omits the demo action when the project has no demo URL", () => {
+		render(
+			<MemoryRouter>
+				<ProjectCard
+					codeUrl="https://github.com/ThiagoS5/toEpubNode"
+					description="Conversor em lote de PDF para ePub."
+					technologies={["Node.js", "Calibre"]}
+					title="toEpubNode"
+				/>
+			</MemoryRouter>,
+		);
+
+		const article = screen.getByRole("article", { name: "toEpubNode" });
+
+		expect(
+			within(article).getByRole("link", {
+				name: "Abrir código do projeto toEpubNode em nova aba",
+			}),
+		).toHaveAttribute("href", "https://github.com/ThiagoS5/toEpubNode");
+		expect(
+			within(article).queryByRole("link", { name: /demonstra/i }),
+		).not.toBeInTheDocument();
+	});
+
 	it("keeps preview images decorative when no alt text is provided", () => {
 		render(
 			<MemoryRouter>

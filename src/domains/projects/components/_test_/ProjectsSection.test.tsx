@@ -23,10 +23,28 @@ describe("ProjectsSection", () => {
 		expect(
 			screen.getByRole("list", { name: "Lista de projetos selecionados" }),
 		).toBeInTheDocument();
-		expect(screen.getAllByRole("article")).toHaveLength(2);
+		expect(screen.getAllByRole("article")).toHaveLength(3);
 		expect(
 			screen.getByRole("article", { name: "Ficha 5e" }),
 		).toBeInTheDocument();
+		const epubArticle = screen.getByRole("article", { name: "toEpubNode" });
+
+		expect(epubArticle).toBeInTheDocument();
+		expect(
+			within(epubArticle).getByText(
+				"Script de linha de comando em Node.js para converter múltiplos arquivos PDF em ePub de forma automatizada usando o ebook-convert do Calibre.",
+			),
+		).toBeInTheDocument();
+		expect(
+			within(epubArticle).getByRole("link", {
+				name: "Abrir código do projeto toEpubNode em nova aba",
+			}),
+		).toHaveAttribute("href", "https://github.com/ThiagoS5/toEpubNode");
+		expect(
+			within(epubArticle).queryByRole("link", {
+				name: "Abrir demonstração do projeto toEpubNode em nova aba",
+			}),
+		).not.toBeInTheDocument();
 		expect(
 			screen.getByRole("img", { name: "Tela inicial do projeto Ficha 5e" }),
 		).toHaveAttribute("src", "/projects/5Sheet.png");
@@ -67,8 +85,10 @@ describe("ProjectsSection", () => {
 			screen.getByRole("list", { name: "Selected projects list" }),
 		).toBeInTheDocument();
 		const sheetArticle = screen.getByRole("article", { name: "5e Sheet" });
+		const epubArticle = screen.getByRole("article", { name: "toEpubNode" });
 
 		expect(sheetArticle).toBeInTheDocument();
+		expect(epubArticle).toBeInTheDocument();
 		expect(
 			screen.getByRole("img", { name: "Home screen of the 5e Sheet project" }),
 		).toHaveAttribute("src", "/projects/5Sheet.png");
@@ -85,6 +105,16 @@ describe("ProjectsSection", () => {
 				name: "Open demo for 5e Sheet in a new tab",
 			}),
 		).toHaveAttribute("href", "https://5e-sheet-site.vercel.app/");
+		expect(
+			within(epubArticle).getByRole("link", {
+				name: "Open code for toEpubNode in a new tab",
+			}),
+		).toHaveAttribute("href", "https://github.com/ThiagoS5/toEpubNode");
+		expect(
+			within(epubArticle).queryByRole("link", {
+				name: "Open demo for toEpubNode in a new tab",
+			}),
+		).not.toBeInTheDocument();
 		expect(within(sheetArticle).getByText("Code")).toBeInTheDocument();
 		expect(within(sheetArticle).getByText("Demo")).toBeInTheDocument();
 	});

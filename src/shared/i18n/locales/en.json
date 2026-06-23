@@ -199,6 +199,12 @@
 				"demoUrl": "https://5e-sheet-site.vercel.app/",
 				"previewImage": "/projects/5Sheet.png",
 				"previewAlt": "Home screen of the 5e Sheet project"
+			},
+			{
+				"title": "toEpubNode",
+				"description": "Node.js command-line script for automatically converting multiple PDF files to ePub using Calibre's ebook-convert tool.",
+				"technologies": ["Node.js", "JavaScript", "Calibre"],
+				"codeUrl": "https://github.com/ThiagoS5/toEpubNode"
 			}
 		],
 		"listLabel": "Selected projects list",

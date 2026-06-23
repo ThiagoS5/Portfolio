@@ -7,7 +7,7 @@ import { Button } from "@/shared/components/ui/button";
 
 type ProjectCardProps = {
 	codeUrl: string;
-	demoUrl: string;
+	demoUrl?: string;
 	description: string;
 	previewAlt?: string;
 	previewImage?: string;
@@ -26,7 +26,7 @@ export function ProjectCard({
 }: ProjectCardProps) {
 	const titleId = useId();
 	const { t } = useTranslation();
-	const isInternalDemo = demoUrl.startsWith("/");
+	const isInternalDemo = demoUrl?.startsWith("/") ?? false;
 
 	return (
 		<article
@@ -83,27 +83,29 @@ export function ProjectCard({
 							{t("projects.actions.code")}
 						</a>
 					</Button>
-					<Button asChild className="rounded-full" size="sm">
-						{isInternalDemo ? (
-							<Link
-								aria-label={t("projects.actions.demoAria", { title })}
-								to={demoUrl}
-							>
-								<ExternalLink aria-hidden="true" className="size-4" />
-								{t("projects.actions.demo")}
-							</Link>
-						) : (
-							<a
-								aria-label={t("projects.actions.demoExternalAria", { title })}
-								href={demoUrl}
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								<ExternalLink aria-hidden="true" className="size-4" />
-								{t("projects.actions.demo")}
-							</a>
-						)}
-					</Button>
+					{demoUrl ? (
+						<Button asChild className="rounded-full" size="sm">
+							{isInternalDemo ? (
+								<Link
+									aria-label={t("projects.actions.demoAria", { title })}
+									to={demoUrl}
+								>
+									<ExternalLink aria-hidden="true" className="size-4" />
+									{t("projects.actions.demo")}
+								</Link>
+							) : (
+								<a
+									aria-label={t("projects.actions.demoExternalAria", { title })}
+									href={demoUrl}
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									<ExternalLink aria-hidden="true" className="size-4" />
+									{t("projects.actions.demo")}
+								</a>
+							)}
+						</Button>
+					) : null}
 				</div>
 			</div>
 		</article>

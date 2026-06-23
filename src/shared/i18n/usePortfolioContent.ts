@@ -137,7 +137,7 @@ export type FaqContent = {
 
 export type ProjectContent = {
 	codeUrl: string;
-	demoUrl: string;
+	demoUrl?: string;
 	description: string;
 	previewAlt?: string;
 	previewImage?: string;
