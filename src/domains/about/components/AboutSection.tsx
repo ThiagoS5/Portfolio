@@ -28,6 +28,20 @@ export function AboutSection() {
 				</div>
 
 				<aside aria-label={about.asideLabel} className="space-y-14 md:pt-2">
+					<figure className="space-y-4">
+						<div className="aspect-square w-full overflow-hidden rounded-[8px] border border-border bg-card shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_16px_42px_rgba(0,0,0,0.16)]">
+							<img
+								alt={about.profile.alt}
+								className="size-full object-cover"
+								decoding="async"
+								src={about.profile.src}
+							/>
+						</div>
+						<figcaption className="text-muted-foreground text-sm leading-6">
+							{about.profile.caption}
+						</figcaption>
+					</figure>
+
 					<section aria-labelledby="tech-title" className="space-y-6">
 						<h2
 							className="font-semibold text-muted-foreground text-sm"

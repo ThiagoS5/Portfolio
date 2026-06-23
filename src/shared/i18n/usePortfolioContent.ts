@@ -21,6 +21,11 @@ export type AboutContent = {
 	educationTitle: string;
 	intro: string;
 	paragraphs: string[];
+	profile: {
+		alt: string;
+		caption: string;
+		src: string;
+	};
 	skills: string[];
 	skillsAria: string;
 	skillsTitle: string;

@@ -37,6 +37,11 @@
 			"I bring a strong software quality mindset, increasing automated test coverage to 100% with Jest and React Testing Library while improving performance with Vite, Webpack, Redux, and code splitting strategies.",
 			"I work with advanced technical English (C1), WAI-ARIA digital accessibility, and close collaboration with UX/UI and product teams to deliver consistent and inclusive experiences."
 		],
+		"profile": {
+			"alt": "Profile photo of Thiago Soares, Front-End Developer.",
+			"caption": "Thiago Soares, Front-End Developer specialized in accessible interfaces.",
+			"src": "/perfil.jpg"
+		},
 		"skills": [
 			"JavaScript",
 			"TypeScript",

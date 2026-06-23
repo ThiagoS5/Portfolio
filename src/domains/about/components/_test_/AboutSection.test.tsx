@@ -14,6 +14,16 @@ describe("AboutSection", () => {
 		expect(
 			screen.getByRole("list", { name: "Habilidades principais" }),
 		).toBeInTheDocument();
+		expect(
+			screen.getByRole("img", {
+				name: "Foto de perfil de Thiago Soares, desenvolvedor Front-End.",
+			}),
+		).toHaveAttribute("src", "/perfil.jpg");
+		expect(
+			screen.getByText(
+				"Thiago Soares, desenvolvedor Front-End especializado em interfaces acessíveis.",
+			),
+		).toBeInTheDocument();
 		expect(screen.getByText(/RD Saúde/)).toBeInTheDocument();
 		expect(
 			screen.getByText("Bacharelado em Sistema de Informação"),

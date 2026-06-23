@@ -85,11 +85,7 @@ describe("ProjectsSection", () => {
 				name: "Open demo for 5e Sheet in a new tab",
 			}),
 		).toHaveAttribute("href", "https://5e-sheet-site.vercel.app/");
-		expect(
-			within(sheetArticle).getByText("Code"),
-		).toBeInTheDocument();
-		expect(
-			within(sheetArticle).getByText("Demo"),
-		).toBeInTheDocument();
+		expect(within(sheetArticle).getByText("Code")).toBeInTheDocument();
+		expect(within(sheetArticle).getByText("Demo")).toBeInTheDocument();
 	});
 });
