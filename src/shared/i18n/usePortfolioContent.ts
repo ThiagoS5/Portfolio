@@ -110,6 +110,21 @@ export type LayoutContent = {
 	skipLink: string;
 };
 
+export type FaqItem = {
+	answer: string;
+	question: string;
+};
+
+export type FaqContent = {
+	items: FaqItem[];
+	listLabel: string;
+	section: {
+		description: string;
+		eyebrow: string;
+		title: string;
+	};
+};
+
 export type ProjectContent = {
 	codeUrl: string;
 	demoUrl: string;
@@ -149,6 +164,7 @@ export function usePortfolioContent() {
 		about: readResource<AboutContent>(t, "about"),
 		contact: readResource<ContactContent>(t, "contact"),
 		experience: readResource<ExperienceContent>(t, "experience"),
+		faq: readResource<FaqContent>(t, "faq"),
 		layout: readResource<LayoutContent>(t, "layout"),
 		navigation: readResource<NavigationContent>(t, "navigation"),
 		projects: readResource<ProjectsContent>(t, "projects"),

@@ -1,9 +1,11 @@
 import { FaqAccordionItem } from "@/domains/faq/components/FaqAccordionItem";
 import { SectionHeading } from "@/shared/components/molecules/SectionHeading";
 import { Accordion } from "@/shared/components/ui/accordion";
-import { faqs } from "@/shared/data/portfolio";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 
 export function FaqSection() {
+	const { faq } = usePortfolioContent();
+
 	return (
 		<section
 			aria-labelledby="faq-title"
@@ -12,24 +14,24 @@ export function FaqSection() {
 		>
 			<div className="mx-auto max-w-3xl space-y-12">
 				<SectionHeading
-					description="Respostas curtas para alinhar expectativas antes de iniciar uma conversa."
-					eyebrow="FAQ"
+					description={faq.section.description}
+					eyebrow={faq.section.eyebrow}
 					id="faq-title"
 					level={1}
-					title="Perguntas frequentes."
+					title={faq.section.title}
 				/>
 				<Accordion
-					aria-label="Lista de perguntas frequentes"
+					aria-label={faq.listLabel}
 					className="border-border border-t"
 					collapsible
 					defaultValue="faq-0"
 					type="single"
 				>
-					{faqs.map((faq, index) => (
+					{faq.items.map((item, index) => (
 						<FaqAccordionItem
-							answer={faq.answer}
-							key={faq.question}
-							question={faq.question}
+							answer={item.answer}
+							key={item.question}
+							question={item.question}
 							value={`faq-${index}`}
 						/>
 					))}

@@ -204,6 +204,32 @@
 		},
 		"technologiesLabel": "Technologies used in {{title}}"
 	},
+	"faq": {
+		"items": [
+			{
+				"question": "How do you usually start a project?",
+				"answer": "I start with the business goal, map the main flows, and define the semantic structure before refining the visual details."
+			},
+			{
+				"question": "What is the main focus of your work?",
+				"answer": "Building clear, accessible, and maintainable interfaces with special attention to visual consistency and user experience."
+			},
+			{
+				"question": "Do you work with design systems?",
+				"answer": "Yes. I work with tokens, reusable components, variants, documentation, and accessibility criteria to keep products scalable and high quality."
+			},
+			{
+				"question": "How can I get in touch?",
+				"answer": "Use the contact form or send a direct email with the project context."
+			}
+		],
+		"listLabel": "Frequently asked questions list",
+		"section": {
+			"description": "Short answers to align expectations before starting a conversation.",
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions."
+		}
+	},
 	"layout": {
 		"footerName": "Thiago Soares",
 		"homeTitle": "Portfolio navigation hub",
