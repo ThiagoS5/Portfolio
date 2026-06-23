@@ -10,6 +10,14 @@ export const projects = [
 		previewAlt: "Tela inicial do site Liva Empreendimentos",
 	},
 	{
+		title: "Ficha 5e",
+		description:
+			"Aplicação web para criação e consulta de fichas de personagem de D&D 5e, com foco em organização de atributos, leitura rápida e experiência responsiva.",
+		technologies: ["Next.js", "TypeScript", "React"],
+		codeUrl: "https://github.com/ThiagoS5/5eSheetSite",
+		demoUrl: "https://5e-sheet-site.vercel.app/",
+	},
+	{
 		title: "Sistema de Design",
 		description:
 			"Biblioteca de componentes reutilizáveis com tokens monocromáticos, estados de foco e padrões de formulário acessíveis.",
