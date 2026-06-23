@@ -50,4 +50,29 @@ describe("FaqAccordionItem", () => {
 			screen.getByRole("link", { name: "Fale comigo pelo WhatsApp" }),
 		).toHaveAttribute("href", "https://wa.me/5516997459397");
 	});
+
+	it("renders optional text after the call to action link", () => {
+		render(
+			<Accordion collapsible defaultValue="faq-1" type="single">
+				<FaqAccordionItem
+					answer="Me chamar direto no"
+					cta={{
+						ariaLabel: "Chamar Thiago Soares no WhatsApp",
+						href: "https://wa.me/5516997459397",
+						label: "WhatsApp",
+						suffix: ". Vamos conversar.",
+					}}
+					question="Como iniciar?"
+					value="faq-1"
+				/>
+			</Accordion>,
+		);
+
+		expect(
+			screen.getByRole("link", { name: "Chamar Thiago Soares no WhatsApp" }),
+		).toHaveTextContent("WhatsApp");
+		expect(screen.getByRole("region")).toHaveTextContent(
+			"Me chamar direto no WhatsApp. Vamos conversar.",
+		);
+	});
 });

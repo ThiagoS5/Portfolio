@@ -21,6 +21,11 @@ describe("FaqSection", () => {
 			}),
 		).toBeInTheDocument();
 		expect(
+			screen.getByRole("button", {
+				name: "Como faço para iniciar um projeto com você?",
+			}),
+		).toBeInTheDocument();
+		expect(
 			screen.getByRole("link", { name: "Fale comigo pelo WhatsApp" }),
 		).toHaveAttribute("href", "https://wa.me/5516997459397");
 		expect(screen.getAllByRole("button")[0]).toHaveAttribute(
@@ -46,6 +51,11 @@ describe("FaqSection", () => {
 		expect(
 			screen.getByRole("button", {
 				name: "How much does it cost to build a website with you?",
+			}),
+		).toBeInTheDocument();
+		expect(
+			screen.getByRole("button", {
+				name: "How do I start a project with you?",
 			}),
 		).toBeInTheDocument();
 		expect(

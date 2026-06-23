@@ -10,6 +10,7 @@ type FaqAccordionItemProps = {
 		ariaLabel: string;
 		href: string;
 		label: string;
+		suffix?: string;
 	};
 	question: string;
 	value: string;
@@ -40,7 +41,7 @@ export function FaqAccordionItem({
 						>
 							{cta.label}
 						</a>
-						.
+						{cta.suffix ?? "."}
 					</>
 				) : null}
 			</AccordionContent>

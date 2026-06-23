@@ -121,6 +121,7 @@ export type FaqItem = {
 		ariaLabel: string;
 		href: string;
 		label: string;
+		suffix?: string;
 	};
 	question: string;
 };

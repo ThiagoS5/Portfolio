@@ -240,7 +240,13 @@
 			},
 			{
 				"question": "Como faço para iniciar um projeto com você?",
-				"answer": "É super simples! Basta preencher o formulário na aba contatos aqui no site ou me chamar direto no WhatsApp. Vamos bater um papo para eu entender o seu negócio e desenhar a melhor solução para você."
+				"answer": "É super simples! Basta preencher o formulário na aba contatos aqui no site ou me chamar direto no",
+				"cta": {
+					"ariaLabel": "Chamar Thiago Soares no WhatsApp",
+					"href": "https://wa.me/5516997459397",
+					"label": "WhatsApp",
+					"suffix": ". Vamos bater um papo para eu entender o seu negócio e desenhar a melhor solução para você."
+				}
 			}
 		],
 		"listLabel": "Lista de perguntas frequentes",

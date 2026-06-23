@@ -240,7 +240,13 @@
 			},
 			{
 				"question": "How do I start a project with you?",
-				"answer": "It is very simple! Just fill out the form in the contact tab here on the website or message me directly on WhatsApp. We will talk so I can understand your business and design the best solution for you."
+				"answer": "It is very simple! Just fill out the form in the contact tab here on the website or message me directly on",
+				"cta": {
+					"ariaLabel": "Message Thiago Soares on WhatsApp",
+					"href": "https://wa.me/5516997459397",
+					"label": "WhatsApp",
+					"suffix": ". We will talk so I can understand your business and design the best solution for you."
+				}
 			}
 		],
 		"listLabel": "Frequently asked questions list",
