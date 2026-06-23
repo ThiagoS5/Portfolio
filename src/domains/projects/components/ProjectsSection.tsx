@@ -1,8 +1,10 @@
 import { ProjectCard } from "@/domains/projects/components/ProjectCard";
 import { SectionHeading } from "@/shared/components/molecules/SectionHeading";
-import { projects } from "@/shared/data/portfolio";
+import { usePortfolioContent } from "@/shared/i18n/usePortfolioContent";
 
 export function ProjectsSection() {
+	const { projects } = usePortfolioContent();
+
 	return (
 		<section
 			aria-labelledby="projetos-title"
@@ -10,17 +12,17 @@ export function ProjectsSection() {
 			id="projetos"
 		>
 			<SectionHeading
-				description="Projetos selecionados que exploram composição visual, clareza de uso e componentes reaproveitáveis."
-				eyebrow="Projetos"
+				description={projects.section.description}
+				eyebrow={projects.section.eyebrow}
 				id="projetos-title"
 				level={1}
-				title="Trabalhos recentes com interfaces limpas e objetivas."
+				title={projects.section.title}
 			/>
 			<ul
-				aria-label="Lista de projetos selecionados"
+				aria-label={projects.listLabel}
 				className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
 			>
-				{projects.map((project) => (
+				{projects.items.map((project) => (
 					<li className="min-w-0" key={project.title}>
 						<ProjectCard {...project} />
 					</li>

@@ -1,5 +1,6 @@
 import { Code2, ExternalLink } from "lucide-react";
 import { useId } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { Pill } from "@/shared/components/atoms/Pill";
 import { Button } from "@/shared/components/ui/button";
@@ -24,6 +25,7 @@ export function ProjectCard({
 	title,
 }: ProjectCardProps) {
 	const titleId = useId();
+	const { t } = useTranslation();
 	const isInternalDemo = demoUrl.startsWith("/");
 
 	return (
@@ -59,7 +61,7 @@ export function ProjectCard({
 				</div>
 
 				<ul
-					aria-label={`Tecnologias usadas em ${title}`}
+					aria-label={t("projects.technologiesLabel", { title })}
 					className="mt-auto flex flex-wrap gap-2"
 				>
 					{technologies.map((technology) => (
@@ -72,33 +74,33 @@ export function ProjectCard({
 				<div className="flex gap-2 pt-2">
 					<Button asChild className="rounded-full" size="sm" variant="outline">
 						<a
-							aria-label={`Abrir código do projeto ${title} em nova aba`}
+							aria-label={t("projects.actions.codeAria", { title })}
 							href={codeUrl}
 							rel="noopener noreferrer"
 							target="_blank"
 						>
 							<Code2 aria-hidden="true" className="size-4" />
-							Código
+							{t("projects.actions.code")}
 						</a>
 					</Button>
 					<Button asChild className="rounded-full" size="sm">
 						{isInternalDemo ? (
 							<Link
-								aria-label={`Abrir demonstração do projeto ${title}`}
+								aria-label={t("projects.actions.demoAria", { title })}
 								to={demoUrl}
 							>
 								<ExternalLink aria-hidden="true" className="size-4" />
-								Demo
+								{t("projects.actions.demo")}
 							</Link>
 						) : (
 							<a
-								aria-label={`Abrir demonstração do projeto ${title} em nova aba`}
+								aria-label={t("projects.actions.demoExternalAria", { title })}
 								href={demoUrl}
 								rel="noopener noreferrer"
 								target="_blank"
 							>
 								<ExternalLink aria-hidden="true" className="size-4" />
-								Demo
+								{t("projects.actions.demo")}
 							</a>
 						)}
 					</Button>

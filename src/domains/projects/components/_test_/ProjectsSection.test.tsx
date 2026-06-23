@@ -1,10 +1,15 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 
 import { ProjectsSection } from "@/domains/projects/components/ProjectsSection";
+import i18n, { DEFAULT_LANGUAGE } from "@/shared/i18n/i18n";
 
 describe("ProjectsSection", () => {
+	beforeEach(async () => {
+		await i18n.changeLanguage(DEFAULT_LANGUAGE);
+	});
+
 	it("renders selected projects in an accessible list", () => {
 		render(
 			<MemoryRouter>
@@ -41,5 +46,50 @@ describe("ProjectsSection", () => {
 		expect(
 			screen.queryByRole("article", { name: "Painel Operacional" }),
 		).not.toBeInTheDocument();
+	});
+
+	it("renders project content in English when the active language changes", async () => {
+		await i18n.changeLanguage("en");
+
+		render(
+			<MemoryRouter>
+				<ProjectsSection />
+			</MemoryRouter>,
+		);
+
+		expect(
+			screen.getByRole("heading", {
+				level: 1,
+				name: /Recent work with clean, objective interfaces/i,
+			}),
+		).toBeInTheDocument();
+		expect(
+			screen.getByRole("list", { name: "Selected projects list" }),
+		).toBeInTheDocument();
+		const sheetArticle = screen.getByRole("article", { name: "5e Sheet" });
+
+		expect(sheetArticle).toBeInTheDocument();
+		expect(
+			screen.getByRole("img", { name: "Home screen of the 5e Sheet project" }),
+		).toHaveAttribute("src", "/projects/5Sheet.png");
+		expect(
+			screen.getByRole("list", { name: "Technologies used in 5e Sheet" }),
+		).toBeInTheDocument();
+		expect(
+			within(sheetArticle).getByRole("link", {
+				name: "Open code for 5e Sheet in a new tab",
+			}),
+		).toHaveAttribute("href", "https://github.com/ThiagoS5/5eSheetSite");
+		expect(
+			within(sheetArticle).getByRole("link", {
+				name: "Open demo for 5e Sheet in a new tab",
+			}),
+		).toHaveAttribute("href", "https://5e-sheet-site.vercel.app/");
+		expect(
+			within(sheetArticle).getByText("Code"),
+		).toBeInTheDocument();
+		expect(
+			within(sheetArticle).getByText("Demo"),
+		).toBeInTheDocument();
 	});
 });

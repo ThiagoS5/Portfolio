@@ -110,6 +110,34 @@ export type LayoutContent = {
 	skipLink: string;
 };
 
+export type ProjectContent = {
+	codeUrl: string;
+	demoUrl: string;
+	description: string;
+	previewAlt?: string;
+	previewImage?: string;
+	technologies: string[];
+	title: string;
+};
+
+export type ProjectsContent = {
+	actions: {
+		code: string;
+		codeAria: string;
+		demo: string;
+		demoAria: string;
+		demoExternalAria: string;
+	};
+	items: ProjectContent[];
+	listLabel: string;
+	section: {
+		description: string;
+		eyebrow: string;
+		title: string;
+	};
+	technologiesLabel: string;
+};
+
 function readResource<T>(t: TFunction, key: string) {
 	return t(key, { returnObjects: true }) as T;
 }
@@ -123,5 +151,6 @@ export function usePortfolioContent() {
 		experience: readResource<ExperienceContent>(t, "experience"),
 		layout: readResource<LayoutContent>(t, "layout"),
 		navigation: readResource<NavigationContent>(t, "navigation"),
+		projects: readResource<ProjectsContent>(t, "projects"),
 	};
 }

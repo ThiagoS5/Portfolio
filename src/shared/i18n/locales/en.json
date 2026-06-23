@@ -168,6 +168,42 @@
 		},
 		"technologiesLabel": "Technologies related to {{role}}"
 	},
+	"projects": {
+		"actions": {
+			"code": "Code",
+			"codeAria": "Open code for {{title}} in a new tab",
+			"demo": "Demo",
+			"demoAria": "Open demo for {{title}}",
+			"demoExternalAria": "Open demo for {{title}} in a new tab"
+		},
+		"items": [
+			{
+				"title": "Liva Empreendimentos",
+				"description": "Institutional website for a construction company, focused on intuitive navigation, clear visual hierarchy, and mobile optimization.",
+				"technologies": ["React", "Tailwind CSS", "Shadcn UI"],
+				"codeUrl": "https://github.com/ThiagoS5/Liva-Empreendimento",
+				"demoUrl": "https://liva-thiago-marqueti-soares.vercel.app/",
+				"previewImage": "/projects/liva-empreendimento.png",
+				"previewAlt": "Home screen of the Liva Empreendimentos website"
+			},
+			{
+				"title": "5e Sheet",
+				"description": "Web application for creating and reviewing D&D 5e character sheets, focused on organized attributes, fast reading, and a responsive experience.",
+				"technologies": ["Next.js", "TypeScript", "React"],
+				"codeUrl": "https://github.com/ThiagoS5/5eSheetSite",
+				"demoUrl": "https://5e-sheet-site.vercel.app/",
+				"previewImage": "/projects/5Sheet.png",
+				"previewAlt": "Home screen of the 5e Sheet project"
+			}
+		],
+		"listLabel": "Selected projects list",
+		"section": {
+			"description": "Selected projects exploring visual composition, clarity of use, and reusable components.",
+			"eyebrow": "Projects",
+			"title": "Recent work with clean, objective interfaces."
+		},
+		"technologiesLabel": "Technologies used in {{title}}"
+	},
 	"layout": {
 		"footerName": "Thiago Soares",
 		"homeTitle": "Portfolio navigation hub",
