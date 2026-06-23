@@ -17,6 +17,10 @@ describe("ContactSection", () => {
 			"href",
 			"mailto:thimarqueti@gmail.com",
 		);
+		expect(screen.getByRole("link", { name: /WhatsApp:/i })).toHaveAttribute(
+			"href",
+			"https://wa.me/5516997459397",
+		);
 		expect(screen.getByRole("link", { name: /LinkedIn:/i })).toHaveAttribute(
 			"href",
 			"https://www.linkedin.com/in/thiago-marqueti-soares/",
