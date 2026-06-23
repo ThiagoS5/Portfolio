@@ -41,7 +41,7 @@ export function PageLayout({ children }: PageLayoutProps) {
 			</main>
 
 			<footer className="mx-auto flex w-full max-w-6xl flex-col gap-4 border-border border-t px-6 py-10 text-muted-foreground text-sm md:flex-row md:items-center md:justify-between">
-				<p>{layout.footerName}</p>
+				<p>{layout.copyright}</p>
 			</footer>
 		</div>
 	);

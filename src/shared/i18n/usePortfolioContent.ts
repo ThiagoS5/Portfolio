@@ -110,6 +110,7 @@ export type NavigationContent = {
 };
 
 export type LayoutContent = {
+	copyright: string;
 	footerName: string;
 	homeTitle: string;
 	skipLink: string;

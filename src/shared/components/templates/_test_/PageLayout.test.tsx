@@ -25,6 +25,8 @@ describe("PageLayout", () => {
 			screen.getByRole("navigation", { name: /Navega/i }),
 		).toBeInTheDocument();
 		expect(screen.getByRole("main")).toHaveTextContent("Pagina interna");
-		expect(screen.getByRole("contentinfo")).toHaveTextContent("Thiago Soares");
+		expect(screen.getByRole("contentinfo")).toHaveTextContent(
+			"© 2026 Thiago Soares. Todos os direitos reservados.",
+		);
 	});
 });
