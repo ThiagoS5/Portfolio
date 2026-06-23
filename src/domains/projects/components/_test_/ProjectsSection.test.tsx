@@ -18,10 +18,13 @@ describe("ProjectsSection", () => {
 		expect(
 			screen.getByRole("list", { name: "Lista de projetos selecionados" }),
 		).toBeInTheDocument();
-		expect(screen.getAllByRole("article").length).toBeGreaterThan(0);
+		expect(screen.getAllByRole("article")).toHaveLength(2);
 		expect(
 			screen.getByRole("article", { name: "Ficha 5e" }),
 		).toBeInTheDocument();
+		expect(
+			screen.getByRole("img", { name: "Tela inicial do projeto Ficha 5e" }),
+		).toHaveAttribute("src", "/projects/5Sheet.png");
 		expect(
 			screen.getByRole("link", {
 				name: "Abrir código do projeto Ficha 5e em nova aba",
@@ -32,5 +35,11 @@ describe("ProjectsSection", () => {
 				name: "Abrir demonstração do projeto Ficha 5e em nova aba",
 			}),
 		).toHaveAttribute("href", "https://5e-sheet-site.vercel.app/");
+		expect(
+			screen.queryByRole("article", { name: "Sistema de Design" }),
+		).not.toBeInTheDocument();
+		expect(
+			screen.queryByRole("article", { name: "Painel Operacional" }),
+		).not.toBeInTheDocument();
 	});
 });

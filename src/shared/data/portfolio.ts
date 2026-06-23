@@ -16,22 +16,8 @@ export const projects = [
 		technologies: ["Next.js", "TypeScript", "React"],
 		codeUrl: "https://github.com/ThiagoS5/5eSheetSite",
 		demoUrl: "https://5e-sheet-site.vercel.app/",
-	},
-	{
-		title: "Sistema de Design",
-		description:
-			"Biblioteca de componentes reutilizáveis com tokens monocromáticos, estados de foco e padrões de formulário acessíveis.",
-		technologies: ["TypeScript", "Radix UI", "Design Tokens"],
-		codeUrl: "https://github.com/",
-		demoUrl: "/faq",
-	},
-	{
-		title: "Painel Operacional",
-		description:
-			"Dashboard compacto para leitura rápida de dados, construído com hierarquia tipográfica, grids responsivos e interações discretas.",
-		technologies: ["React", "Vite", "A11y"],
-		codeUrl: "https://github.com/",
-		demoUrl: "/contatos",
+		previewImage: "/projects/5Sheet.png",
+		previewAlt: "Tela inicial do projeto Ficha 5e",
 	},
 ];
 
