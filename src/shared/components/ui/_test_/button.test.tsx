@@ -6,10 +6,11 @@ describe("Button", () => {
 	it("renders a native button by default", () => {
 		render(<Button>Enviar</Button>);
 
-		expect(screen.getByRole("button", { name: "Enviar" })).toHaveAttribute(
-			"data-slot",
-			"button",
-		);
+		const button = screen.getByRole("button", { name: "Enviar" });
+
+		expect(button).toHaveAttribute("data-slot", "button");
+		expect(button).toHaveClass("hover:-translate-y-0.5");
+		expect(button).toHaveClass("motion-reduce:transition-none");
 	});
 
 	it("can render as a child link", () => {

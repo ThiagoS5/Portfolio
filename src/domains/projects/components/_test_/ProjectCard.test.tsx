@@ -23,6 +23,8 @@ describe("ProjectCard", () => {
 		const article = screen.getByRole("article", { name: "Portfolio" });
 
 		expect(article).toBeInTheDocument();
+		expect(article).toHaveClass("hover:-translate-y-1");
+		expect(article).toHaveClass("motion-reduce:transform-none");
 		expect(
 			within(article).getByRole("heading", { level: 2, name: "Portfolio" }),
 		).toBeInTheDocument();

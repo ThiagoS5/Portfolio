@@ -31,7 +31,7 @@ export function ProjectCard({
 	return (
 		<article
 			aria-labelledby={titleId}
-			className="group flex h-full flex-col gap-6 rounded-[8px] border border-border bg-card p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_16px_42px_rgba(0,0,0,0.16)] transition duration-300 hover:border-foreground/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_54px_rgba(0,0,0,0.24)]"
+			className="group flex h-full transform-gpu flex-col gap-6 rounded-[8px] border border-border bg-card p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_16px_42px_rgba(0,0,0,0.16)] transition-[border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-1 hover:border-foreground/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_54px_rgba(0,0,0,0.24)] motion-reduce:transform-none motion-reduce:transition-none"
 		>
 			<div className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-muted">
 				{previewImage ? (
