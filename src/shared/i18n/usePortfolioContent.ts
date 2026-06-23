@@ -117,6 +117,11 @@ export type LayoutContent = {
 
 export type FaqItem = {
 	answer: string;
+	cta?: {
+		ariaLabel: string;
+		href: string;
+		label: string;
+	};
 	question: string;
 };
 

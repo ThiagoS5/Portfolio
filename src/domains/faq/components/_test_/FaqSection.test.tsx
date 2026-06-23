@@ -17,9 +17,12 @@ describe("FaqSection", () => {
 		).toBeInTheDocument();
 		expect(
 			screen.getByRole("button", {
-				name: "Como você costuma iniciar um projeto?",
+				name: "Quanto custa para criar um site com você?",
 			}),
 		).toBeInTheDocument();
+		expect(
+			screen.getByRole("link", { name: "Fale comigo pelo WhatsApp" }),
+		).toHaveAttribute("href", "https://wa.me/5516997459397");
 		expect(screen.getAllByRole("button")[0]).toHaveAttribute(
 			"aria-expanded",
 			"true",
@@ -42,13 +45,18 @@ describe("FaqSection", () => {
 		).toBeInTheDocument();
 		expect(
 			screen.getByRole("button", {
-				name: "How do you usually start a project?",
+				name: "How much does it cost to build a website with you?",
 			}),
 		).toBeInTheDocument();
 		expect(
-			screen.getByText(
-				"I start with the business goal, map the main flows, and define the semantic structure before refining the visual details.",
+			screen.getByText((content) =>
+				content.startsWith(
+					"Every project is unique and the investment varies according to complexity",
+				),
 			),
 		).toBeInTheDocument();
+		expect(
+			screen.getByRole("link", { name: "Message me on WhatsApp" }),
+		).toHaveAttribute("href", "https://wa.me/5516997459397");
 	});
 });

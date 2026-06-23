@@ -30,6 +30,7 @@ export function FaqSection() {
 					{faq.items.map((item, index) => (
 						<FaqAccordionItem
 							answer={item.answer}
+							cta={item.cta}
 							key={item.question}
 							question={item.question}
 							value={`faq-${index}`}

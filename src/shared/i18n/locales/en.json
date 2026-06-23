@@ -212,20 +212,29 @@
 	"faq": {
 		"items": [
 			{
-				"question": "How do you usually start a project?",
-				"answer": "I start with the business goal, map the main flows, and define the semantic structure before refining the visual details."
+				"question": "How much does it cost to build a website with you?",
+				"answer": "Every project is unique and the investment varies according to complexity, number of pages, and the features your business needs. To receive a custom quote for your needs,",
+				"cta": {
+					"ariaLabel": "Message me on WhatsApp",
+					"href": "https://wa.me/5516997459397",
+					"label": "Message me on WhatsApp"
+				}
 			},
 			{
-				"question": "What is the main focus of your work?",
-				"answer": "Building clear, accessible, and maintainable interfaces with special attention to visual consistency and user experience."
+				"question": "What is the delivery timeline for a project?",
+				"answer": "The timeline depends on the project scope. A professional landing page is usually ready in an average of 7 to 15 days, while more robust institutional websites can take a little longer. We align the full schedule before development starts so you can follow each step."
 			},
 			{
-				"question": "Do you work with design systems?",
-				"answer": "Yes. I work with tokens, reusable components, variants, documentation, and accessibility criteria to keep products scalable and high quality."
+				"question": "Do I need to already have the design or layout ready to send you?",
+				"answer": "Not necessarily! If you already have a visual identity or prototype ready, I code it faithfully to the design. If you do not have one, we can plan and design the interface from scratch so it fits your business."
 			},
 			{
-				"question": "How can I get in touch?",
-				"answer": "Use the contact form or send a direct email with the project context."
+				"question": "Will I be able to update the website text and images by myself later?",
+				"answer": "Yes. Depending on your business needs, I can integrate a simple content management system or structure the code so you have autonomy to update text and images without depending on a developer for simple tasks."
+			},
+			{
+				"question": "How do I start a project with you?",
+				"answer": "It is very simple! Just fill out the form in the contact tab here on the website or message me directly on WhatsApp. We will talk so I can understand your business and design the best solution for you."
 			}
 		],
 		"listLabel": "Frequently asked questions list",

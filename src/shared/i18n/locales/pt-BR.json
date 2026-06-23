@@ -212,20 +212,29 @@
 	"faq": {
 		"items": [
 			{
-				"question": "Como você costuma iniciar um projeto?",
-				"answer": "Começo pelo objetivo de negócio, mapeio os fluxos principais e defino a estrutura semântica antes de chegar nos detalhes visuais."
+				"question": "Quanto custa para criar um site com você?",
+				"answer": "Cada projeto é único e o investimento varia de acordo com a complexidade, o número de páginas e as funcionalidades que o seu negócio precisa. Para receber um orçamento sob medida para a sua necessidade,",
+				"cta": {
+					"ariaLabel": "Fale comigo pelo WhatsApp",
+					"href": "https://wa.me/5516997459397",
+					"label": "Fale comigo pelo WhatsApp"
+				}
 			},
 			{
-				"question": "Qual é o foco principal do seu trabalho?",
-				"answer": "Construir interfaces claras, acessíveis e sustentáveis, com atenção especial a consistência visual e experiência de uso."
+				"question": "Qual é o prazo de entrega de um projeto?",
+				"answer": "O prazo depende do escopo do projeto. Uma Landing Page profissional costuma ficar pronta em média de 7 a 15 dias, enquanto sites institucionais mais robustos podem levar um pouco mais. Alinhamos todo o cronograma antes de iniciar o desenvolvimento para você acompanhar cada etapa."
 			},
 			{
-				"question": "Você trabalha com design systems?",
-				"answer": "Sim. Trabalho com tokens, componentes reutilizáveis, variantes, documentação e critérios de acessibilidade para manter escala e qualidade."
+				"question": "Eu preciso já ter o design/layout pronto para te mandar?",
+				"answer": "Não necessariamente! Se você já tiver a identidade visual ou o protótipo pronto, eu faço a codificação fiel ao design. Caso não tenha, nós podemos planejar e desenhar a interface do zero para que ela fique com a cara do seu negócio."
 			},
 			{
-				"question": "Como entrar em contato?",
-				"answer": "Use o formulário da seção de contato ou envie uma mensagem direta por email com o contexto do projeto."
+				"question": "Eu vou conseguir alterar os textos e imagens do site sozinho depois?",
+				"answer": "Sim. Dependendo da necessidade do seu negócio, posso integrar um sistema de gerenciamento de conteúdo simples ou estruturar o código de forma que você tenha total autonomia para atualizar textos e imagens sem depender de um programador para tarefas simples."
+			},
+			{
+				"question": "Como faço para iniciar um projeto com você?",
+				"answer": "É super simples! Basta preencher o formulário na aba contatos aqui no site ou me chamar direto no WhatsApp. Vamos bater um papo para eu entender o seu negócio e desenhar a melhor solução para você."
 			}
 		],
 		"listLabel": "Lista de perguntas frequentes",
