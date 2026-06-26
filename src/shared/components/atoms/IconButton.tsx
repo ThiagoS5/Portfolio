@@ -38,10 +38,10 @@ export function IconButton({
 			aria-current={isActive ? "page" : undefined}
 			aria-label={label}
 			className={cn(
-				"!bg-background hover:!bg-background inline-flex size-14 shrink-0 items-center justify-center rounded-full border border-border bg-clip-padding text-foreground/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_0_1px_rgba(255,255,255,0.03)] outline-none transition-all duration-300 ease-out hover:border-foreground/35 hover:text-foreground hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_0_0_1px_rgba(255,255,255,0.12),0_14px_36px_rgba(0,0,0,0.22)] focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+				"inline-flex size-14 shrink-0 items-center justify-center rounded-full border bg-card bg-clip-padding text-muted-foreground outline-none transition-all duration-300 ease-out hover:border-gold hover:text-gold hover:shadow-[0_12px_30px_rgba(0,0,0,0.18)] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background",
 				isActive
-					? "!bg-background border-foreground/45 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_0_1px_rgba(255,255,255,0.12),0_16px_42px_rgba(0,0,0,0.28)]"
-					: "border-border",
+					? "border-gold text-gold shadow-[0_0_0_4px_var(--gold-soft)]"
+					: "border-input",
 			)}
 			data-size="icon"
 			data-slot="button"

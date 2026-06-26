@@ -1,4 +1,3 @@
-import { Languages } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/shared/components/ui/button";
@@ -33,7 +32,7 @@ export function LanguageSwitcher() {
 					next: nextLanguageName,
 				})}
 				aria-pressed={currentLanguage === "en"}
-				className="size-11 rounded-full border-border bg-card font-semibold text-[0.7rem] text-foreground/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_0_1px_rgba(255,255,255,0.04)] transition duration-300 hover:border-foreground/35 hover:bg-card hover:text-foreground hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_0_0_1px_rgba(255,255,255,0.12),0_12px_30px_rgba(0,0,0,0.22)] focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+				className="size-10 rounded-full border-input bg-card/70 font-mono font-semibold text-[0.72rem] text-muted-foreground tracking-wide backdrop-blur transition duration-300 hover:border-gold hover:bg-card/70 hover:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 				onClick={() => {
 					void handleLanguageChange();
 				}}
@@ -41,7 +40,6 @@ export function LanguageSwitcher() {
 				type="button"
 				variant="outline"
 			>
-				<Languages aria-hidden="true" className="size-4" />
 				<span aria-hidden="true">{currentLanguage === "en" ? "EN" : "PT"}</span>
 			</Button>
 			<span aria-live="polite" className="sr-only">

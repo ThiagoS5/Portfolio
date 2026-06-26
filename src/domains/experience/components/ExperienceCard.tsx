@@ -7,6 +7,7 @@ type ExperienceCardProps = {
 	highlights?: string[];
 	highlightsLabel?: string;
 	highlightsTitle?: string;
+	metrics?: string[];
 	period: string;
 	role: string;
 	technologies: string[];
@@ -19,6 +20,7 @@ export function ExperienceCard({
 	highlights = [],
 	highlightsLabel,
 	highlightsTitle,
+	metrics = [],
 	period,
 	role,
 	technologies,
@@ -29,34 +31,22 @@ export function ExperienceCard({
 	return (
 		<article
 			aria-labelledby={titleId}
-			className="grid gap-8 border-border border-t pt-10 md:grid-cols-[180px_1fr]"
+			className="grid gap-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:items-start"
 		>
-			<p className="font-medium text-muted-foreground text-sm">{period}</p>
-			<div className="space-y-5">
-				<div className="space-y-2">
-					<h2 className="font-light text-2xl leading-tight" id={titleId}>
+			<div className="space-y-5 md:sticky md:top-24">
+				<p className="font-mono text-gold text-sm">{period}</p>
+				<div className="space-y-1">
+					<h2
+						className="font-medium font-mono text-2xl leading-tight"
+						id={titleId}
+					>
 						{role}
 					</h2>
-					<p className="font-medium">{company}</p>
+					<p className="text-muted-foreground">{company}</p>
 				</div>
-				<p className="max-w-2xl text-muted-foreground leading-8">
+				<p className="max-w-sm text-muted-foreground leading-7">
 					{description}
 				</p>
-				{highlights.length > 0 ? (
-					<div className="space-y-3">
-						{highlightsTitle ? (
-							<h3 className="font-semibold text-sm">{highlightsTitle}</h3>
-						) : null}
-						<ul
-							aria-label={highlightsLabel}
-							className="list-disc space-y-3 pl-5 text-muted-foreground leading-7"
-						>
-							{highlights.map((highlight) => (
-								<li key={highlight}>{highlight}</li>
-							))}
-						</ul>
-					</div>
-				) : null}
 				<ul aria-label={technologiesLabel} className="flex flex-wrap gap-2">
 					{technologies.map((technology) => (
 						<li key={technology}>
@@ -65,6 +55,32 @@ export function ExperienceCard({
 					))}
 				</ul>
 			</div>
+
+			{highlights.length > 0 ? (
+				<div>
+					{highlightsTitle ? (
+						<h3 className="sr-only">{highlightsTitle}</h3>
+					) : null}
+					<ul
+						aria-label={highlightsLabel}
+						className="divide-y divide-border border-border border-t"
+					>
+						{highlights.map((highlight, index) => (
+							<li
+								className="grid grid-cols-[60px_1fr] items-baseline gap-4 py-4"
+								key={highlight}
+							>
+								<span className="font-mono font-semibold text-gold text-sm">
+									{metrics[index] ?? "—"}
+								</span>
+								<span className="text-muted-foreground text-sm leading-7">
+									{highlight}
+								</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			) : null}
 		</article>
 	);
 }

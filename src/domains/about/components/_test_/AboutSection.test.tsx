@@ -1,19 +1,25 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { AboutSection } from "@/domains/about/components/AboutSection";
 
 describe("AboutSection", () => {
-	it("renders the about section with complementary technology information", () => {
+	it("renders the about section with heading, core stack, and complementary information", () => {
 		render(<AboutSection />);
 
-		expect(
-			screen.getByRole("heading", { level: 1, name: "Sobre Mim" }),
-		).toBeInTheDocument();
+		const heading = screen.getByRole("heading", { level: 1 });
+
+		expect(heading).toHaveAttribute("id", "sobre-title");
+		expect(heading).toHaveTextContent("clean code");
+
 		expect(screen.getByLabelText(/Informa/i)).toBeInTheDocument();
-		expect(
-			screen.getByRole("list", { name: "Habilidades principais" }),
-		).toBeInTheDocument();
+
+		const stack = screen.getByRole("region", { name: "Stack principal" });
+
+		expect(stack).toBeInTheDocument();
+		expect(within(stack).getByText("Linguagens")).toBeInTheDocument();
+		expect(within(stack).getByText("TypeScript")).toBeInTheDocument();
+
 		expect(
 			screen.getByRole("img", {
 				name: "Foto de perfil de Thiago Soares, desenvolvedor Front-End.",

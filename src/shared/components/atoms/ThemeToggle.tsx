@@ -36,7 +36,7 @@ export function ThemeToggle() {
 		<Button
 			aria-label={isDark ? t("controls.theme.light") : t("controls.theme.dark")}
 			aria-pressed={isDark}
-			className="size-11 rounded-full border-border bg-card text-foreground/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_0_1px_rgba(255,255,255,0.04)] transition duration-300 hover:border-foreground/35 hover:bg-card hover:text-foreground hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_0_0_1px_rgba(255,255,255,0.12),0_12px_30px_rgba(0,0,0,0.22)] focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+			className="size-10 rounded-full border-input bg-card/70 text-muted-foreground backdrop-blur transition duration-300 hover:border-gold hover:bg-card/70 hover:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 			onClick={() => setTheme(isDark ? "light" : "dark")}
 			size="icon"
 			type="button"

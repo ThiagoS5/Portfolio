@@ -21,6 +21,7 @@ export function ContactSection() {
 						eyebrow={contact.section.eyebrow}
 						id="contato-title"
 						level={1}
+						number="04"
 						title={contact.section.title}
 					/>
 
@@ -35,17 +36,19 @@ export function ContactSection() {
 										label: link.label,
 										value: link.value,
 									})}
-									className="group flex items-center justify-between gap-4 border-border border-b py-4 text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+									className="group flex items-center justify-between gap-4 border-border border-b py-5 text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 									href={link.href}
 									key={link.label}
 									rel={isExternal ? "noopener noreferrer" : undefined}
 									target={isExternal ? "_blank" : undefined}
 								>
 									<span>
-										<span className="block font-semibold text-xs">
+										<span className="block font-mono text-[0.68rem] text-gold uppercase tracking-[0.1em]">
 											{link.label}
 										</span>
-										<span className="text-lg">{link.value}</span>
+										<span className="text-base text-foreground">
+											{link.value}
+										</span>
 									</span>
 									<ArrowUpRight
 										aria-hidden="true"

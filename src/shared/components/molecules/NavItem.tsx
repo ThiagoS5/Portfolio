@@ -58,11 +58,11 @@ export function NavItem({
 			<span
 				aria-hidden="true"
 				className={cn(
-					"font-semibold text-sm transition-colors duration-300",
+					"font-mono text-xs tracking-wide transition-colors duration-300",
 					orientation === "horizontal" && "whitespace-nowrap",
 					isActive
-						? "text-foreground"
-						: "text-muted-foreground group-hover:text-foreground",
+						? "font-medium text-gold"
+						: "text-muted-foreground group-hover:text-gold",
 				)}
 			>
 				{label}

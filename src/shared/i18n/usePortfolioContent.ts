@@ -13,12 +13,23 @@ type Education = {
 	period: string;
 };
 
+export type StackGroup = {
+	items: string[];
+	title: string;
+};
+
 export type AboutContent = {
 	asideLabel: string;
 	certifications: Certification[];
 	certificationsTitle: string;
 	education: Education;
 	educationTitle: string;
+	eyebrow: string;
+	heading: {
+		highlight: string;
+		post: string;
+		pre: string;
+	};
 	intro: string;
 	paragraphs: string[];
 	profile: {
@@ -29,13 +40,28 @@ export type AboutContent = {
 	skills: string[];
 	skillsAria: string;
 	skillsTitle: string;
+	stack: StackGroup[];
+	stackTitle: string;
 	title: string;
+};
+
+export type HeroStat = {
+	label: string;
+	value: string;
+};
+
+export type HeroContent = {
+	name: string;
+	role: string;
+	stats: HeroStat[];
+	tagline: string;
 };
 
 export type ExperienceItem = {
 	company: string;
 	description: string;
 	highlights: string[];
+	metrics?: string[];
 	period: string;
 	role: string;
 	technologies: string[];
@@ -177,6 +203,7 @@ export function usePortfolioContent() {
 		contact: readResource<ContactContent>(t, "contact"),
 		experience: readResource<ExperienceContent>(t, "experience"),
 		faq: readResource<FaqContent>(t, "faq"),
+		hero: readResource<HeroContent>(t, "hero"),
 		layout: readResource<LayoutContent>(t, "layout"),
 		navigation: readResource<NavigationContent>(t, "navigation"),
 		projects: readResource<ProjectsContent>(t, "projects"),

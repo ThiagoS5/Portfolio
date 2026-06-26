@@ -16,9 +16,10 @@ export function ExperienceSection() {
 				eyebrow={experience.section.eyebrow}
 				id="experiencia-title"
 				level={1}
+				number="03"
 				title={experience.section.title}
 			/>
-			<ol className="space-y-12">
+			<ol className="space-y-16">
 				{experience.items.map((item) => (
 					<li key={`${item.company}-${item.role}`}>
 						<ExperienceCard

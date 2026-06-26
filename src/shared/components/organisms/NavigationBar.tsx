@@ -150,7 +150,7 @@ export function NavigationBar() {
 								? navigation.menu.mobileClose
 								: navigation.menu.mobileOpen
 						}
-						className="size-12 rounded-full border-border bg-card text-foreground/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_0_1px_rgba(255,255,255,0.04)] transition-all duration-300 ease-out hover:border-foreground/35 hover:bg-card hover:text-foreground focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+						className="size-12 rounded-full border-gold bg-card text-gold shadow-[0_0_0_4px_var(--gold-soft)] transition-all duration-300 ease-out hover:border-gold hover:bg-card hover:text-gold focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 						onClick={() => setIsExpanded((current) => !current)}
 						size="icon"
 						type="button"
@@ -197,7 +197,7 @@ export function NavigationBar() {
 					<div className="relative mx-auto w-full min-w-[320px] max-w-5xl">
 						<div
 							aria-hidden="true"
-							className="absolute top-7 right-7 left-7 z-0 h-px bg-foreground/15 md:right-14 md:left-14 dark:bg-foreground/10"
+							className="absolute top-7 right-7 left-7 z-0 h-px bg-border md:right-14 md:left-14"
 						/>
 						<ul className="relative z-10 grid grid-cols-5 items-start gap-1 md:flex md:justify-between">
 							{navItems.map((item) => (
@@ -238,18 +238,18 @@ export function NavigationBar() {
 							whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
 						>
 							<span className="relative flex items-center justify-center">
-								<span className="flex size-14 items-center justify-center rounded-full border border-foreground/45 bg-card text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_0_1px_rgba(255,255,255,0.12),0_16px_40px_rgba(0,0,0,0.24)] transition-all duration-300 ease-out group-hover:border-foreground/60 group-hover:text-foreground group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_0_0_1px_rgba(255,255,255,0.16),0_14px_36px_rgba(0,0,0,0.26)]">
+								<span className="flex size-14 items-center justify-center rounded-full border border-gold bg-card text-gold shadow-[0_0_0_4px_var(--gold-soft)] transition-all duration-300 ease-out group-hover:shadow-[0_0_0_4px_var(--gold-soft),0_12px_30px_rgba(0,0,0,0.18)]">
 									{activeItem.icon}
 								</span>
 								<ChevronRight
 									aria-hidden="true"
 									className={cn(
-										"absolute left-full ml-2 size-5 text-foreground/75 transition-all duration-300 ease-out group-hover:text-foreground",
+										"absolute left-full ml-2 size-5 text-muted-foreground transition-all duration-300 ease-out group-hover:text-gold",
 										isExpanded && "rotate-90",
 									)}
 								/>
 							</span>
-							<span className="font-semibold text-foreground text-sm transition-all duration-300 ease-out">
+							<span className="font-medium font-mono text-gold text-xs tracking-wide transition-all duration-300 ease-out">
 								{activeItem.label}
 							</span>
 						</motion.button>

@@ -1,6 +1,41 @@
 {
+	"hero": {
+		"name": "Thiago Soares",
+		"role": "Desenvolvedor Front-End Pleno",
+		"tagline": "Interfaces escaláveis, acessíveis e rápidas. Arquitetura de Design Systems com foco em qualidade e resultado.",
+		"stats": [
+			{ "label": "anos", "value": "4+" },
+			{ "label": "testes", "value": "100%" },
+			{ "label": "tempo de dev", "value": "−30%" }
+		]
+	},
 	"about": {
 		"asideLabel": "Informações complementares",
+		"eyebrow": "Sobre mim",
+		"heading": {
+			"highlight": "clean code",
+			"post": " e acessibilidade.",
+			"pre": "Engenharia de interface com cuidado em "
+		},
+		"stackTitle": "Stack principal",
+		"stack": [
+			{
+				"items": ["JavaScript", "TypeScript", "PHP"],
+				"title": "Linguagens"
+			},
+			{
+				"items": ["React · Next.js", "Angular", "Tailwind · Styled"],
+				"title": "Frameworks"
+			},
+			{
+				"items": ["Redux · Zustand", "Context API", "Vite · Webpack"],
+				"title": "Estado & Build"
+			},
+			{
+				"items": ["Jest · RTL", "WAI-ARIA", "Code Splitting"],
+				"title": "Qualidade"
+			}
+		],
 		"certifications": [
 			{
 				"description": "Formação em design de interfaces, prototipagem e experiência do usuário com foco na integração entre áreas de design e desenvolvimento.",
@@ -122,6 +157,7 @@
 		}
 	},
 	"controls": {
+		"home": "Início",
 		"language": {
 			"label": "Idioma atual: {{current}}. Alterar para {{next}}.",
 			"names": {
@@ -150,6 +186,7 @@
 					"Gerenciei estados globais com Redux e Context API, reduzindo em 20% a incidência de bugs em fluxos de dados.",
 					"Configurei Vite e Webpack com code splitting, reduzindo em 15% o tamanho final do bundle e melhorando o carregamento inicial."
 				],
+				"metrics": ["−30%", "100%", "A11y", "RESTful", "−20%", "−15%"],
 				"period": "11/2020 - 04/2025",
 				"role": "Desenvolvedor Front-End",
 				"technologies": [

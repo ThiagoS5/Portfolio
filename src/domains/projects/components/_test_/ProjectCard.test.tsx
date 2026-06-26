@@ -24,7 +24,7 @@ describe("ProjectCard", () => {
 
 		expect(article).toBeInTheDocument();
 		expect(article).toHaveClass("hover:-translate-y-1");
-		expect(article).toHaveClass("dark:hover:border-[#D3AF37]/70");
+		expect(article).toHaveClass("dark:hover:border-[#CBA85C]/70");
 		expect(article).toHaveClass("motion-reduce:transform-none");
 		expect(
 			within(article).getByRole("heading", { level: 2, name: "Portfolio" }),

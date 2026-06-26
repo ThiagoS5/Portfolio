@@ -1,6 +1,41 @@
 {
+	"hero": {
+		"name": "Thiago Soares",
+		"role": "Mid-level Front-End Developer",
+		"tagline": "Scalable, accessible, and fast interfaces. Design System architecture focused on quality and results.",
+		"stats": [
+			{ "label": "years", "value": "4+" },
+			{ "label": "tests", "value": "100%" },
+			{ "label": "dev time", "value": "−30%" }
+		]
+	},
 	"about": {
 		"asideLabel": "Additional information",
+		"eyebrow": "About me",
+		"heading": {
+			"highlight": "clean code",
+			"post": " and accessibility.",
+			"pre": "Interface engineering crafted with care for "
+		},
+		"stackTitle": "Core stack",
+		"stack": [
+			{
+				"items": ["JavaScript", "TypeScript", "PHP"],
+				"title": "Languages"
+			},
+			{
+				"items": ["React · Next.js", "Angular", "Tailwind · Styled"],
+				"title": "Frameworks"
+			},
+			{
+				"items": ["Redux · Zustand", "Context API", "Vite · Webpack"],
+				"title": "State & Build"
+			},
+			{
+				"items": ["Jest · RTL", "WAI-ARIA", "Code Splitting"],
+				"title": "Quality"
+			}
+		],
 		"certifications": [
 			{
 				"description": "Training in interface design, prototyping, and user experience with a focus on connecting design and development workflows.",
@@ -122,6 +157,7 @@
 		}
 	},
 	"controls": {
+		"home": "Home",
 		"language": {
 			"label": "Current language: {{current}}. Switch to {{next}}.",
 			"names": {
@@ -150,6 +186,7 @@
 					"Managed global state with Redux and Context API, reducing production data-flow bugs by 20%.",
 					"Configured Vite and Webpack with code splitting, reducing the final bundle size by 15% and improving initial loading."
 				],
+				"metrics": ["−30%", "100%", "A11y", "RESTful", "−20%", "−15%"],
 				"period": "11/2020 - 04/2025",
 				"role": "Front-End Developer",
 				"technologies": [

@@ -20,7 +20,7 @@ type FormFieldProps = {
 };
 
 const fieldClasses =
-	"min-h-12 rounded-none border-x-0 border-t-0 border-b border-input bg-transparent px-0 text-base focus-visible:border-foreground focus-visible:ring-0";
+	"min-h-12 rounded-lg border border-input bg-card px-4 text-base focus-visible:border-gold focus-visible:ring-0";
 
 export function FormField({
 	autoComplete,
@@ -40,7 +40,10 @@ export function FormField({
 
 	return (
 		<div className="space-y-3">
-			<Label className="font-medium text-sm" htmlFor={id}>
+			<Label
+				className="font-mono text-muted-foreground text-xs tracking-wide"
+				htmlFor={id}
+			>
 				{label}
 			</Label>
 			{variant === "textarea" ? (

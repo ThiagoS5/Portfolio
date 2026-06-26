@@ -16,11 +16,12 @@ export function ProjectsSection() {
 				eyebrow={projects.section.eyebrow}
 				id="projetos-title"
 				level={1}
+				number="02"
 				title={projects.section.title}
 			/>
 			<ul
 				aria-label={projects.listLabel}
-				className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+				className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3"
 			>
 				{projects.items.map((project) => (
 					<li className="min-w-0" key={project.title}>

@@ -18,6 +18,7 @@ export function FaqSection() {
 					eyebrow={faq.section.eyebrow}
 					id="faq-title"
 					level={1}
+					number="05"
 					title={faq.section.title}
 				/>
 				<Accordion

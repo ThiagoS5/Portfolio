@@ -10,11 +10,10 @@ export function Pill({ className, variant = "solid", ...props }: PillProps) {
 	return (
 		<span
 			className={cn(
-				"inline-flex items-center rounded-full px-4 py-1.5 font-medium text-xs leading-none",
-				variant === "solid" &&
-					"bg-foreground text-background ring-1 ring-foreground",
+				"inline-flex items-center rounded-md border px-2.5 py-1 font-mono text-[11px] leading-none tracking-wide",
+				variant === "solid" && "border-gold/35 bg-gold-soft text-gold",
 				variant === "outline" &&
-					"bg-background text-foreground ring-1 ring-border",
+					"border-border bg-transparent text-muted-foreground",
 				className,
 			)}
 			{...props}
