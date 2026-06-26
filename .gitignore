@@ -13,7 +13,12 @@ dist-ssr
 coverage
 .vitest-localstorage*
 .playwright-mcp
+.pnpm-store
 *.local
+
+# Tooling e arquivos de trabalho locais
+.claude
+.design-handoff
 
 # Editor directories and files
 .vscode/*
