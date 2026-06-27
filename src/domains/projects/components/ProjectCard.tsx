@@ -13,8 +13,8 @@ type ProjectCardProps = {
 	title: string;
 };
 
-const linkClasses =
-	"font-mono text-[0.78rem] tracking-wide transition-colors focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+const overlayLinkClasses =
+	"font-mono text-sm tracking-wide underline-offset-4 transition-colors hover:underline focus-visible:rounded focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export function ProjectCard({
 	codeUrl,
@@ -32,7 +32,7 @@ export function ProjectCard({
 	return (
 		<article
 			aria-labelledby={titleId}
-			className="group flex h-full transform-gpu flex-col overflow-hidden rounded-xl border border-border bg-card transition-[border-color,transform] duration-300 ease-out hover:-translate-y-1 hover:border-gold/60 motion-reduce:transform-none motion-reduce:transition-none dark:hover:border-[#CBA85C]/70"
+			className="group relative flex h-full transform-gpu flex-col overflow-hidden rounded-xl border border-border bg-card transition-[border-color,transform] duration-300 ease-out hover:-translate-y-1 hover:border-gold/60 motion-reduce:transform-none motion-reduce:transition-none dark:hover:border-[#CBA85C]/70"
 		>
 			{previewImage ? (
 				<div className="aspect-[16/10] overflow-hidden bg-secondary">
@@ -80,42 +80,43 @@ export function ProjectCard({
 						</li>
 					))}
 				</ul>
+			</div>
 
-				<div className="flex gap-5 border-border border-t pt-4">
-					<a
-						aria-label={t("projects.actions.codeAria", { title })}
-						className={`${linkClasses} text-muted-foreground hover:text-gold`}
-						href={codeUrl}
-						rel="noopener noreferrer"
-						target="_blank"
-					>
-						<span aria-hidden="true">↗</span>{" "}
-						<span>{t("projects.actions.code")}</span>
-					</a>
-					{demoUrl ? (
-						isInternalDemo ? (
-							<Link
-								aria-label={t("projects.actions.demoAria", { title })}
-								className={`${linkClasses} text-gold hover:text-gold-strong`}
-								to={demoUrl}
-							>
-								<span aria-hidden="true">→</span>{" "}
-								<span>{t("projects.actions.demo")}</span>
-							</Link>
-						) : (
-							<a
-								aria-label={t("projects.actions.demoExternalAria", { title })}
-								className={`${linkClasses} text-gold hover:text-gold-strong`}
-								href={demoUrl}
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								<span aria-hidden="true">→</span>{" "}
-								<span>{t("projects.actions.demo")}</span>
-							</a>
-						)
-					) : null}
-				</div>
+			{/* Camada revelada no hover/foco: borra o card e centraliza Code/Demo */}
+			<div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center gap-6 bg-card/50 opacity-0 backdrop-blur-md transition-opacity duration-300 ease-out group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 motion-reduce:transition-none">
+				<a
+					aria-label={t("projects.actions.codeAria", { title })}
+					className={`${overlayLinkClasses} text-foreground hover:text-gold`}
+					href={codeUrl}
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<span aria-hidden="true">↗</span>{" "}
+					<span>{t("projects.actions.code")}</span>
+				</a>
+				{demoUrl ? (
+					isInternalDemo ? (
+						<Link
+							aria-label={t("projects.actions.demoAria", { title })}
+							className={`${overlayLinkClasses} text-gold hover:text-gold-strong`}
+							to={demoUrl}
+						>
+							<span aria-hidden="true">→</span>{" "}
+							<span>{t("projects.actions.demo")}</span>
+						</Link>
+					) : (
+						<a
+							aria-label={t("projects.actions.demoExternalAria", { title })}
+							className={`${overlayLinkClasses} text-gold hover:text-gold-strong`}
+							href={demoUrl}
+							rel="noopener noreferrer"
+							target="_blank"
+						>
+							<span aria-hidden="true">→</span>{" "}
+							<span>{t("projects.actions.demo")}</span>
+						</a>
+					)
+				) : null}
 			</div>
 		</article>
 	);
