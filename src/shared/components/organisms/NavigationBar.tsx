@@ -8,7 +8,6 @@ import {
 import {
 	BriefcaseBusiness,
 	ChevronRight,
-	CircleHelp,
 	Code2,
 	Mail,
 	Menu,
@@ -54,13 +53,8 @@ export function NavigationBar() {
 			label: navigation.items.contact,
 			to: "/contatos",
 		},
-		{
-			icon: <CircleHelp aria-hidden="true" className="size-5" />,
-			label: navigation.items.faq,
-			to: "/faq",
-		},
 	];
-	const homePrimaryItem = navItems[4];
+	const homePrimaryItem = navItems[navItems.length - 1];
 	const activeItem =
 		navItems.find((item) => item.to === pathname) ?? homePrimaryItem;
 	const inactiveItems = navItems.filter((item) => item.to !== activeItem.to);

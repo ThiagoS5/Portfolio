@@ -252,47 +252,6 @@
 		},
 		"technologiesLabel": "Tecnologias usadas em {{title}}"
 	},
-	"faq": {
-		"items": [
-			{
-				"question": "Quanto custa para criar um site com você?",
-				"answer": "Cada projeto é único e o investimento varia de acordo com a complexidade, o número de páginas e as funcionalidades que o seu negócio precisa. Para receber um orçamento sob medida para a sua necessidade,",
-				"cta": {
-					"ariaLabel": "Fale comigo pelo WhatsApp",
-					"href": "https://wa.me/5516997459397",
-					"label": "Fale comigo pelo WhatsApp"
-				}
-			},
-			{
-				"question": "Qual é o prazo de entrega de um projeto?",
-				"answer": "O prazo depende do escopo do projeto. Uma Landing Page profissional costuma ficar pronta em média de 7 a 15 dias, enquanto sites institucionais mais robustos podem levar um pouco mais. Alinhamos todo o cronograma antes de iniciar o desenvolvimento para você acompanhar cada etapa."
-			},
-			{
-				"question": "Eu preciso já ter o design/layout pronto para te mandar?",
-				"answer": "Não necessariamente! Se você já tiver a identidade visual ou o protótipo pronto, eu faço a codificação fiel ao design. Caso não tenha, nós podemos planejar e desenhar a interface do zero para que ela fique com a cara do seu negócio."
-			},
-			{
-				"question": "Eu vou conseguir alterar os textos e imagens do site sozinho depois?",
-				"answer": "Sim. Dependendo da necessidade do seu negócio, posso integrar um sistema de gerenciamento de conteúdo simples ou estruturar o código de forma que você tenha total autonomia para atualizar textos e imagens sem depender de um programador para tarefas simples."
-			},
-			{
-				"question": "Como faço para iniciar um projeto com você?",
-				"answer": "É super simples! Basta preencher o formulário na aba contatos aqui no site ou me chamar direto no",
-				"cta": {
-					"ariaLabel": "Chamar Thiago Soares no WhatsApp",
-					"href": "https://wa.me/5516997459397",
-					"label": "WhatsApp",
-					"suffix": ". Vamos bater um papo para eu entender o seu negócio e desenhar a melhor solução para você."
-				}
-			}
-		],
-		"listLabel": "Lista de perguntas frequentes",
-		"section": {
-			"description": "Respostas curtas para alinhar expectativas antes de iniciar uma conversa.",
-			"eyebrow": "FAQ",
-			"title": "Perguntas frequentes."
-		}
-	},
 	"layout": {
 		"copyright": "© 2026 Thiago Soares. Todos os direitos reservados.",
 		"footerName": "Thiago Soares",
@@ -301,12 +260,11 @@
 	},
 	"navigation": {
 		"ariaLabel": "Navegação principal",
-		"help": "Navegação para as páginas Sobre mim, Projetos, Experiência, Contatos e FAQ.",
+		"help": "Navegação para as páginas Sobre mim, Projetos, Experiência e Contatos.",
 		"items": {
 			"about": "Sobre mim",
 			"contact": "Contatos",
 			"experience": "Experiência",
-			"faq": "FAQ",
 			"projects": "Projetos"
 		},
 		"menu": {

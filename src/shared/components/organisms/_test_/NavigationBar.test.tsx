@@ -27,9 +27,9 @@ describe("NavigationBar", () => {
 			"href",
 			"/projetos",
 		);
-		expect(screen.getByRole("link", { name: "FAQ" })).toHaveAttribute(
+		expect(screen.getByRole("link", { name: "Contatos" })).toHaveAttribute(
 			"href",
-			"/faq",
+			"/contatos",
 		);
 		expect(
 			screen.queryByRole("button", { name: /Abrir menu/i }),
@@ -53,7 +53,7 @@ describe("NavigationBar", () => {
 
 		expect(menu).toBeInTheDocument();
 		expect(
-			within(menu as HTMLElement).getByRole("link", { name: "FAQ" }),
+			within(menu as HTMLElement).getByRole("link", { name: "Projetos" }),
 		).toBeInTheDocument();
 	});
 
@@ -69,7 +69,7 @@ describe("NavigationBar", () => {
 		);
 
 		fireEvent.click(
-			within(menu as HTMLElement).getByRole("link", { name: "FAQ" }),
+			within(menu as HTMLElement).getByRole("link", { name: "Projetos" }),
 		);
 
 		expect(trigger).toHaveAttribute("aria-expanded", "false");
@@ -85,7 +85,9 @@ describe("NavigationBar", () => {
 
 		expect(trigger).toHaveAttribute("aria-current", "page");
 		expect(trigger).toHaveAttribute("aria-expanded", "false");
-		expect(screen.queryByRole("link", { name: "FAQ" })).not.toBeInTheDocument();
+		expect(
+			screen.queryByRole("link", { name: "Contatos" }),
+		).not.toBeInTheDocument();
 
 		fireEvent.click(trigger);
 
@@ -96,8 +98,8 @@ describe("NavigationBar", () => {
 
 		expect(menu).toBeInTheDocument();
 		expect(
-			within(menu as HTMLElement).getByRole("link", { name: "FAQ" }),
-		).toHaveAttribute("href", "/faq");
+			within(menu as HTMLElement).getByRole("link", { name: "Contatos" }),
+		).toHaveAttribute("href", "/contatos");
 
 		fireEvent.keyDown(document, { key: "Escape" });
 
@@ -131,11 +133,11 @@ describe("NavigationBar", () => {
 		);
 
 		fireEvent.click(
-			within(menu as HTMLElement).getByRole("link", { name: "FAQ" }),
+			within(menu as HTMLElement).getByRole("link", { name: "Contatos" }),
 		);
 
 		expect(
-			screen.getByRole("button", { name: /Expandir menu.*FAQ/i }),
+			screen.getByRole("button", { name: /Expandir menu.*Contatos/i }),
 		).toHaveAttribute("aria-expanded", "false");
 	});
 });

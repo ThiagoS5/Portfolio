@@ -252,47 +252,6 @@
 		},
 		"technologiesLabel": "Technologies used in {{title}}"
 	},
-	"faq": {
-		"items": [
-			{
-				"question": "How much does it cost to build a website with you?",
-				"answer": "Every project is unique and the investment varies according to complexity, number of pages, and the features your business needs. To receive a custom quote for your needs,",
-				"cta": {
-					"ariaLabel": "Message me on WhatsApp",
-					"href": "https://wa.me/5516997459397",
-					"label": "Message me on WhatsApp"
-				}
-			},
-			{
-				"question": "What is the delivery timeline for a project?",
-				"answer": "The timeline depends on the project scope. A professional landing page is usually ready in an average of 7 to 15 days, while more robust institutional websites can take a little longer. We align the full schedule before development starts so you can follow each step."
-			},
-			{
-				"question": "Do I need to already have the design or layout ready to send you?",
-				"answer": "Not necessarily! If you already have a visual identity or prototype ready, I code it faithfully to the design. If you do not have one, we can plan and design the interface from scratch so it fits your business."
-			},
-			{
-				"question": "Will I be able to update the website text and images by myself later?",
-				"answer": "Yes. Depending on your business needs, I can integrate a simple content management system or structure the code so you have autonomy to update text and images without depending on a developer for simple tasks."
-			},
-			{
-				"question": "How do I start a project with you?",
-				"answer": "It is very simple! Just fill out the form in the contact tab here on the website or message me directly on",
-				"cta": {
-					"ariaLabel": "Message Thiago Soares on WhatsApp",
-					"href": "https://wa.me/5516997459397",
-					"label": "WhatsApp",
-					"suffix": ". We will talk so I can understand your business and design the best solution for you."
-				}
-			}
-		],
-		"listLabel": "Frequently asked questions list",
-		"section": {
-			"description": "Short answers to align expectations before starting a conversation.",
-			"eyebrow": "FAQ",
-			"title": "Frequently asked questions."
-		}
-	},
 	"layout": {
 		"copyright": "© 2026 Thiago Soares. All rights reserved.",
 		"footerName": "Thiago Soares",
@@ -301,12 +260,11 @@
 	},
 	"navigation": {
 		"ariaLabel": "Primary navigation",
-		"help": "Navigation for the About me, Projects, Experience, Contact, and FAQ pages.",
+		"help": "Navigation for the About me, Projects, Experience, and Contact pages.",
 		"items": {
 			"about": "About me",
 			"contact": "Contact",
 			"experience": "Experience",
-			"faq": "FAQ",
 			"projects": "Projects"
 		},
 		"menu": {

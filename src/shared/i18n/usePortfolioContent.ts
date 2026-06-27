@@ -125,7 +125,6 @@ export type NavigationContent = {
 		about: string;
 		contact: string;
 		experience: string;
-		faq: string;
 		projects: string;
 	};
 	menu: {
@@ -140,27 +139,6 @@ export type LayoutContent = {
 	footerName: string;
 	homeTitle: string;
 	skipLink: string;
-};
-
-export type FaqItem = {
-	answer: string;
-	cta?: {
-		ariaLabel: string;
-		href: string;
-		label: string;
-		suffix?: string;
-	};
-	question: string;
-};
-
-export type FaqContent = {
-	items: FaqItem[];
-	listLabel: string;
-	section: {
-		description: string;
-		eyebrow: string;
-		title: string;
-	};
 };
 
 export type ProjectContent = {
@@ -202,7 +180,6 @@ export function usePortfolioContent() {
 		about: readResource<AboutContent>(t, "about"),
 		contact: readResource<ContactContent>(t, "contact"),
 		experience: readResource<ExperienceContent>(t, "experience"),
-		faq: readResource<FaqContent>(t, "faq"),
 		hero: readResource<HeroContent>(t, "hero"),
 		layout: readResource<LayoutContent>(t, "layout"),
 		navigation: readResource<NavigationContent>(t, "navigation"),

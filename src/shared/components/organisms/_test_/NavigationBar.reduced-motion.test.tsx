@@ -35,7 +35,7 @@ describe("NavigationBar reduced motion", () => {
 
 		expect(trigger).toHaveAttribute("aria-expanded", "true");
 		expect(
-			within(menu as HTMLElement).getByRole("link", { name: "FAQ" }),
-		).toHaveAttribute("href", "/faq");
+			within(menu as HTMLElement).getByRole("link", { name: "Contatos" }),
+		).toHaveAttribute("href", "/contatos");
 	});
 });

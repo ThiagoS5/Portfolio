@@ -53,14 +53,6 @@ export const router = createBrowserRouter([
 				},
 			},
 			{
-				path: "faq",
-				HydrateFallback: RouteHydrateFallback,
-				lazy: async () => {
-					const { FaqPage } = await import("@/domains/faq/FaqPage");
-					return { Component: FaqPage };
-				},
-			},
-			{
 				path: "*",
 				element: <Navigate replace to="/" />,
 			},
