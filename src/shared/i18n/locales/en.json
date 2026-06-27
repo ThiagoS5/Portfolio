@@ -4,9 +4,18 @@
 		"role": "Mid-level Front-End Developer",
 		"tagline": "Scalable, accessible, and fast interfaces. Design System architecture focused on quality and results.",
 		"stats": [
-			{ "label": "years", "value": "4+" },
-			{ "label": "tests", "value": "100%" },
-			{ "label": "dev time", "value": "−30%" }
+			{
+				"label": "years",
+				"value": "4+"
+			},
+			{
+				"label": "tests",
+				"value": "100%"
+			},
+			{
+				"label": "dev time",
+				"value": "−30%"
+			}
 		]
 	},
 	"about": {
@@ -20,19 +29,35 @@
 		"stackTitle": "Core stack",
 		"stack": [
 			{
-				"items": ["JavaScript", "TypeScript", "PHP"],
+				"items": [
+					"JavaScript",
+					"TypeScript",
+					"PHP"
+				],
 				"title": "Languages"
 			},
 			{
-				"items": ["React · Next.js", "Angular", "Tailwind · Styled"],
+				"items": [
+					"React · Next.js",
+					"Angular",
+					"Tailwind · Styled"
+				],
 				"title": "Frameworks"
 			},
 			{
-				"items": ["Redux · Zustand", "Context API", "Vite · Webpack"],
+				"items": [
+					"Redux · Zustand",
+					"Context API",
+					"Vite · Webpack"
+				],
 				"title": "State & Build"
 			},
 			{
-				"items": ["Jest · RTL", "WAI-ARIA", "Code Splitting"],
+				"items": [
+					"Jest · RTL",
+					"WAI-ARIA",
+					"Code Splitting"
+				],
 				"title": "Quality"
 			}
 		],
@@ -186,7 +211,14 @@
 					"Managed global state with Redux and Context API, reducing production data-flow bugs by 20%.",
 					"Configured Vite and Webpack with code splitting, reducing the final bundle size by 15% and improving initial loading."
 				],
-				"metrics": ["−30%", "100%", "A11y", "RESTful", "−20%", "−15%"],
+				"metrics": [
+					"−30%",
+					"100%",
+					"A11y",
+					"RESTful",
+					"−20%",
+					"−15%"
+				],
 				"period": "11/2020 - 04/2025",
 				"role": "Front-End Developer",
 				"technologies": [
@@ -222,16 +254,24 @@
 			{
 				"title": "Liva Empreendimentos",
 				"description": "Institutional website for a construction company, focused on intuitive navigation, clear visual hierarchy, and mobile optimization.",
-				"technologies": ["React", "Tailwind CSS", "Shadcn UI"],
+				"technologies": [
+					"React",
+					"Tailwind CSS",
+					"Shadcn UI"
+				],
 				"codeUrl": "https://github.com/ThiagoS5/Liva-Empreendimento",
 				"demoUrl": "https://liva-thiago-marqueti-soares.vercel.app/",
 				"previewImage": "/projects/liva-empreendimento.png",
 				"previewAlt": "Home screen of the Liva Empreendimentos website"
 			},
 			{
-				"title": "5e Sheet",
+				"title": "5e Sheet (Under development)",
 				"description": "Web application for creating and reviewing D&D 5e character sheets, focused on organized attributes, fast reading, and a responsive experience.",
-				"technologies": ["Next.js", "TypeScript", "React"],
+				"technologies": [
+					"Next.js",
+					"TypeScript",
+					"React"
+				],
 				"codeUrl": "https://github.com/ThiagoS5/5eSheetSite",
 				"demoUrl": "https://5e-sheet-site.vercel.app/",
 				"previewImage": "/projects/5Sheet.png",
@@ -240,7 +280,11 @@
 			{
 				"title": "toEpubNode",
 				"description": "Node.js command-line script for automatically converting multiple PDF files to ePub using Calibre's ebook-convert tool.",
-				"technologies": ["Node.js", "JavaScript", "Calibre"],
+				"technologies": [
+					"Node.js",
+					"JavaScript",
+					"Calibre"
+				],
 				"codeUrl": "https://github.com/ThiagoS5/toEpubNode"
 			}
 		],
