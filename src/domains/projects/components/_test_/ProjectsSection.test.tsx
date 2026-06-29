@@ -25,7 +25,7 @@ describe("ProjectsSection", () => {
 		).toBeInTheDocument();
 		expect(screen.getAllByRole("article")).toHaveLength(3);
 		expect(
-			screen.getByRole("article", { name: "Ficha 5e" }),
+			screen.getByRole("article", { name: "Ficha 5e (Em construção)" }),
 		).toBeInTheDocument();
 		const epubArticle = screen.getByRole("article", { name: "toEpubNode" });
 
@@ -50,12 +50,12 @@ describe("ProjectsSection", () => {
 		).toHaveAttribute("src", "/projects/5Sheet.png");
 		expect(
 			screen.getByRole("link", {
-				name: "Abrir código do projeto Ficha 5e em nova aba",
+				name: "Abrir código do projeto Ficha 5e (Em construção) em nova aba",
 			}),
 		).toHaveAttribute("href", "https://github.com/ThiagoS5/5eSheetSite");
 		expect(
 			screen.getByRole("link", {
-				name: "Abrir demonstração do projeto Ficha 5e em nova aba",
+				name: "Abrir demonstração do projeto Ficha 5e (Em construção) em nova aba",
 			}),
 		).toHaveAttribute("href", "https://5e-sheet-site.vercel.app/");
 		expect(
@@ -84,7 +84,9 @@ describe("ProjectsSection", () => {
 		expect(
 			screen.getByRole("list", { name: "Selected projects list" }),
 		).toBeInTheDocument();
-		const sheetArticle = screen.getByRole("article", { name: "5e Sheet" });
+		const sheetArticle = screen.getByRole("article", {
+			name: "5e Sheet (Under development)",
+		});
 		const epubArticle = screen.getByRole("article", { name: "toEpubNode" });
 
 		expect(sheetArticle).toBeInTheDocument();
@@ -93,16 +95,18 @@ describe("ProjectsSection", () => {
 			screen.getByRole("img", { name: "Home screen of the 5e Sheet project" }),
 		).toHaveAttribute("src", "/projects/5Sheet.png");
 		expect(
-			screen.getByRole("list", { name: "Technologies used in 5e Sheet" }),
+			screen.getByRole("list", {
+				name: "Technologies used in 5e Sheet (Under development)",
+			}),
 		).toBeInTheDocument();
 		expect(
 			within(sheetArticle).getByRole("link", {
-				name: "Open code for 5e Sheet in a new tab",
+				name: "Open code for 5e Sheet (Under development) in a new tab",
 			}),
 		).toHaveAttribute("href", "https://github.com/ThiagoS5/5eSheetSite");
 		expect(
 			within(sheetArticle).getByRole("link", {
-				name: "Open demo for 5e Sheet in a new tab",
+				name: "Open demo for 5e Sheet (Under development) in a new tab",
 			}),
 		).toHaveAttribute("href", "https://5e-sheet-site.vercel.app/");
 		expect(

@@ -13,8 +13,8 @@ type ProjectCardProps = {
 	title: string;
 };
 
-const overlayLinkClasses =
-	"font-mono text-sm tracking-wide underline-offset-4 transition-colors hover:underline focus-visible:rounded focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+const actionLinkClasses =
+	"font-mono text-[0.78rem] tracking-wide underline-offset-4 transition-colors hover:underline focus-visible:rounded focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:text-sm";
 
 export function ProjectCard({
 	codeUrl,
@@ -82,11 +82,12 @@ export function ProjectCard({
 				</ul>
 			</div>
 
-			{/* Camada revelada no hover/foco: borra o card e centraliza Code/Demo */}
-			<div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center gap-6 bg-card/50 opacity-0 backdrop-blur-md transition-opacity duration-300 ease-out group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 motion-reduce:transition-none">
+			{/* Mobile: rodapé fixo com Code/Demo. Desktop (md+): camada que borra o
+			    card e centraliza as ações ao passar o mouse ou focar via teclado. */}
+			<div className="flex gap-5 border-border border-t px-5 py-4 md:pointer-events-none md:absolute md:inset-0 md:z-10 md:items-center md:justify-center md:gap-6 md:border-0 md:bg-card/50 md:px-0 md:py-0 md:opacity-0 md:backdrop-blur-md md:transition-opacity md:duration-300 md:ease-out md:group-hover:pointer-events-auto md:group-hover:opacity-100 md:group-focus-within:pointer-events-auto md:group-focus-within:opacity-100 motion-reduce:transition-none">
 				<a
 					aria-label={t("projects.actions.codeAria", { title })}
-					className={`${overlayLinkClasses} text-foreground hover:text-gold`}
+					className={`${actionLinkClasses} text-muted-foreground hover:text-gold md:text-foreground`}
 					href={codeUrl}
 					rel="noopener noreferrer"
 					target="_blank"
@@ -98,7 +99,7 @@ export function ProjectCard({
 					isInternalDemo ? (
 						<Link
 							aria-label={t("projects.actions.demoAria", { title })}
-							className={`${overlayLinkClasses} text-gold hover:text-gold-strong`}
+							className={`${actionLinkClasses} text-gold hover:text-gold-strong`}
 							to={demoUrl}
 						>
 							<span aria-hidden="true">→</span>{" "}
@@ -107,7 +108,7 @@ export function ProjectCard({
 					) : (
 						<a
 							aria-label={t("projects.actions.demoExternalAria", { title })}
-							className={`${overlayLinkClasses} text-gold hover:text-gold-strong`}
+							className={`${actionLinkClasses} text-gold hover:text-gold-strong`}
 							href={demoUrl}
 							rel="noopener noreferrer"
 							target="_blank"

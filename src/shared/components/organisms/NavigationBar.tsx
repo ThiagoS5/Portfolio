@@ -193,7 +193,7 @@ export function NavigationBar() {
 							aria-hidden="true"
 							className="absolute top-7 right-7 left-7 z-0 h-px bg-border md:right-14 md:left-14"
 						/>
-						<ul className="relative z-10 grid grid-cols-5 items-start gap-1 md:flex md:justify-between">
+						<ul className="relative z-10 grid grid-cols-4 items-start gap-1 md:flex md:justify-between">
 							{navItems.map((item) => (
 								<NavItem
 									className="w-auto min-w-0 gap-3 px-1 md:w-28 md:gap-4 md:px-0"
